@@ -3,16 +3,15 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 
-import { GlobalContext } from '../context/GlobalContext';
-import Header from '../components/Header';
+import '../style/dashboard.css';
 
-const AboutPage = () => {
+import { GlobalContext } from '../context/GlobalContext';
+
+const DashboardPage = () => {
   const { theme, setTheme } = useContext(GlobalContext);
 
   return (
     <div>
-      <Header />
-
       <p>About Page Theme: {theme}</p>
 
       <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
@@ -22,4 +21,4 @@ const AboutPage = () => {
     </div>
   );
 };
-export default React.memo(AboutPage);
+export default React.memo(DashboardPage);

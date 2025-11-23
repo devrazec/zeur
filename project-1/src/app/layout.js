@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+
+import './style/globals.css';
 
 import GlobalContext from './context/GlobalContext';
 

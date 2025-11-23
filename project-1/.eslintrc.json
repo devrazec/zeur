@@ -10,7 +10,7 @@
     "coverage/",
     ".flowbite-react/"
   ],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react", "react-hooks"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -23,6 +23,13 @@
         "trailingComma": "es5",
         "arrowParens": "avoid"
       }
-    ]
+    ],
+    // Relaxed rules added
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

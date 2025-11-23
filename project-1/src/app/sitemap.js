@@ -2,7 +2,7 @@ export default async function sitemap() {
   const baseUrl =
     process.env.NEXT_PUBLIC_WEBSITE_URL || 'http://localhost:3000';
 
-  const routes = ['', 'about', 'contact'];
+  const routes = ['', 'about'];
 
   return routes.map(route => ({
     url: `${baseUrl}/${route}`,

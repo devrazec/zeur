@@ -44,9 +44,14 @@ robot
 sidemap
 not-found
 
+npm i -S aos
+npm i -S next-themes
+npm i -S @tabler/icons-react
+
 npm i -S leaflet
 npm i -S @turf/turf
 npm i -S react-leaflet@next
+
 npm i -S firebase
 
 ## Project-2 React 19 cra-Template

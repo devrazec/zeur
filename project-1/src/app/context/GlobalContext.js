@@ -7,6 +7,7 @@ export const GlobalContext = createContext();
 const GlobalProvider = props => {
   const [theme, setTheme] = useState('light');
   const [user, setUser] = useState(null);
+  const [menu, setMenu] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -15,6 +16,8 @@ const GlobalProvider = props => {
         setTheme,
         user,
         setUser,
+        menu,
+        setMenu,
       }}
     >
       {props.children}

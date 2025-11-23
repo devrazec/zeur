@@ -1,47 +1,59 @@
 'use client';
 
-import React, { useContext } from 'react';
-import { Footer, FooterBrand, FooterCopyright } from 'flowbite-react';
-import { GlobalContext } from '../context/GlobalContext';
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from 'flowbite-react';
 
-const FooterComponent = () => {
+const Footer = () => {
   // ✅ Access the global state and updater
-  const { theme, setTheme } = useContext(GlobalContext);
 
   return (
-    <Footer className="rounded-none">
-      <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4 text-center md:p-8 lg:p-10 [&>div]:w-fit">
-        <FooterBrand
-          alt="Flowbite logo"
-          href="https://flowbite.com"
-          name="Flowbite"
-          src="https://flowbite.com/docs/images/logo.svg"
-        />
+    <footer className="bg-base-100 dark:bg-base-900 pt-6">
+      <div className="container px-4 mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-6">
+          <Image
+            src="/img/zeur-logo-2.png"
+            alt={'Logo'}
+            width={120}
+            height={40}
+            className="h-10 w-auto opacity-70 hover:opacity-100 dark:invert"
+            priority
+          />
 
-        <p className="my-6 text-gray-500 dark:text-gray-400">
-          Open-source library of over 400+ web components and interactive
-          elements built for better web.
-          <br />
-          <strong>Theme:</strong> {theme}
-        </p>
+          <div className="flex flex-row gap-4 text-sm">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/services">Services</Link>
+          </div>
+          <div className="inline-flex gap-2 items-center">
+            <Button
+              icon="tabler:brand-x"
+              href="#"
+              color="white"
+              className="p-3"
+            />
+          </div>
+        </div>
 
-        <FooterCopyright
-          by="Flowbite™. All Rights Reserved."
-          href="https://flowbite.com"
-          year={2023}
-        />
+        <div className="border-t border-base py-4 text-center flex justify-between">
+          <p className="text-sm">&copy; {'2025 Zeur. All rights reserved.'}</p>
+          <Link
+            href="https://zeur.com.br"
+            className="text-sm text-muted italic"
+          >
+            https://zeur.com.br
+          </Link>
+          <p className="text-sm">
+            Made by{' '}
+            <Link href="https://zeur.com.br" className="text-sm">
+              Zeur
+            </Link>
+          </p>
+        </div>
       </div>
-
-      <div className="mt-4 flex justify-center gap-4">
-        <button
-          className="px-3 py-2 bg-gray-700 text-white rounded"
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        >
-          Change Theme
-        </button>
-      </div>
-    </Footer>
+    </footer>
   );
 };
 
-export default React.memo(FooterComponent);
+export default React.memo(Footer);
