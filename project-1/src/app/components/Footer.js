@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="bg-base-100 dark:bg-base-900 pt-6">
       <div className="container px-4 mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-6">
+        {/* <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-6">
           <Image
             src="/img/zeur-logo-2.png"
             alt={'Logo'}
@@ -34,7 +34,7 @@ const Footer = () => {
               className="p-3"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="border-t border-base py-4 text-center flex justify-between">
           <p className="text-sm">&copy; {'2025 Zeur. All rights reserved.'}</p>

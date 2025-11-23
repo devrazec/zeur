@@ -51,6 +51,7 @@ npm i -S @tabler/icons-react
 npm i -S leaflet
 npm i -S @turf/turf
 npm i -S react-leaflet@next
+npm i -S react-leaflet-cluster
 
 npm i -S firebase
 
