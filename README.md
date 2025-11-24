@@ -55,7 +55,7 @@ npm i -S react-leaflet-cluster
 
 npm i -S firebase
 
-## Project-2 React 19 cra-Template
+# Project-2 React 18 cra-Template
 
 npx create-react-app .
 
@@ -70,3 +70,80 @@ Create Global React Context
 npm i -S eslint-plugin-react-refresh
 
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+# Project-3 Nodejs + React 18
+
+npm init -y
+npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier
+npx eslint --init
+
+✔ What do you want to lint? · javascript
+✔ How would you like to use ESLint? · check syntax and find problems
+✔ What type of modules does your project use? · esm (import/export)
+✔ Which framework does your project use? · none
+✔ Does your project use TypeScript? · No
+✔ Where does your code run? · browser
+✔ Would you like to install them now? eslint, @eslint/js, globals, eslint-plugin-react · Yes
+✔ Which package manager do you want to use? · npm
+
+- Backend Node
+
+npm i -D esbuild
+npm i -S express
+
+- Frontend React
+
+npx create-vite@latest frontend -- --template react
+
+Select a framework: React
+Select a variant: JavaScript
+Use rolldown-vite (Experimental)?: No
+Install with npm and start now? Yes
+
+npm i -S react@18 react-dom@18
+npm i -S react-router-dom
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+Copy files from other project
+.env
+eslint.config.js
+.prettierrc
+.prettierignore
+
+Setup package.json
+
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "format": "prettier --write ."
+  },
+
+  npm run format
+  npm run lint
+  npm run build
+
+  npm i -D tailwindcss postcss autoprefixer 
+
+  npm i -S tailwind-merge tw-animate-css
+
+  npm i -D @tailwindcss/postcss
+
+  Copy files from other project
+
+  postcss.config.cjs
+  tailwind.config.js
+
+  Create Global React Context
+
+  npx flowbite-react@latest init
+
+  npm i -D flowbite-typography
+
+  npm i -S flowbite-react-icons react-icons @iconify/react @tabler/icons-react
+
+  npm i -S leaflet
+  npm i -S react-leaflet@next
+  npm i -S react-leaflet-cluster
