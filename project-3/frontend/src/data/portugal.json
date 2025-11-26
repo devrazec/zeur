@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "features": [
     {
-      "type ": "Feature",
+      "type": "Feature",
       "properties": {
         "name": "Portugal",
         "ISO3166-1-Alpha-3": "PRT",

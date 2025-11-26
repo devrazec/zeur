@@ -1,4 +1,5 @@
 # zeur
+
 Building Zeur Projects
 
 # Project-1 Nextjs 15
@@ -25,13 +26,13 @@ Copy files from nextjs-15-app-router
 
 Setup package.json
 
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write ."
-  },
+"scripts": {
+"dev": "next dev",
+"build": "next build",
+"start": "next start",
+"lint": "next lint",
+"format": "prettier --write ."
+},
 
 npx flowbite-react@latest init
 npm i -S flowbite-react-icons
@@ -112,40 +113,58 @@ eslint.config.js
 
 Setup package.json
 
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx",
-    "lint:fix": "eslint . --ext js,jsx --fix",
-    "format": "prettier --write ."
-  },
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"preview": "vite preview",
+"lint": "eslint . --ext js,jsx",
+"lint:fix": "eslint . --ext js,jsx --fix",
+"format": "prettier --write ."
+},
 
-  npm run format
-  npm run lint
-  npm run build
+npm run format
+npm run lint
+npm run build
 
-  npm i -D tailwindcss postcss autoprefixer 
+npm i -D tailwindcss postcss autoprefixer
 
-  npm i -S tailwind-merge tw-animate-css
+npm i -S tailwind-merge tw-animate-css
 
-  npm i -D @tailwindcss/postcss
+npm i -D @tailwindcss/postcss
 
-  Copy files from other project
+Copy files from other project
 
-  postcss.config.cjs
-  tailwind.config.js
+postcss.config.cjs
+tailwind.config.js
 
-  Create Global React Context
+Create Global React Context
 
-  npx flowbite-react@latest init
+npx flowbite-react@latest init
 
-  npm i -D flowbite-typography
+npm i -D flowbite-typography
 
-  npm i -S flowbite-react-icons react-icons @iconify/react @tabler/icons-react
+npm i -S flowbite-react-icons react-icons @iconify/react @tabler/icons-react
 
-  npm i -S leaflet 
-  npm i -S leaflet-draw
-  npm i -S react-leaflet@next
-  npm i -S react-leaflet-cluster
-  npm i -S react-leaflet-draw
+npm i -S leaflet
+npm i -S leaflet-draw
+npm i -S react-leaflet@next
+npm i -S react-leaflet-cluster
+npm i -S react-leaflet-draw
+
+# Project-4 React 19
+
+npx create-vite@latest . -- --template react
+
+Select a framework: React
+Select a variant: JavaScript
+Use rolldown-vite (Experimental)?: No
+Install with npm and start now? Yes
+
+npm i -S react@18 react-dom@18
+npm i -S react-router-dom
+
+npm i -S leaflet
+npm i -S leaflet-draw
+npm i -S react-leaflet@next
+npm i -S react-leaflet-cluster
+npm i -S react-leaflet-draw
