@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './style/app.css';
+import './assets/css/app.css';
 
 import { Home } from './pages/Home';
 import { About } from './pages/About';
