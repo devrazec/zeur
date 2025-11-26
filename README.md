@@ -144,6 +144,8 @@ Setup package.json
 
   npm i -S flowbite-react-icons react-icons @iconify/react @tabler/icons-react
 
-  npm i -S leaflet
+  npm i -S leaflet 
+  npm i -S leaflet-draw
   npm i -S react-leaflet@next
   npm i -S react-leaflet-cluster
+  npm i -S react-leaflet-draw

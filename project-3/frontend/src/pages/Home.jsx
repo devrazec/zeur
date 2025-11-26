@@ -4,6 +4,7 @@ import '../assets/css/home.css';
 import { GlobalContext } from '../context/GlobalContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Map from '../components/Map';
 
 export function Home() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export function Home() {
   return (
     <>
       <Header />
-
+      
       <Footer />
     </>
   );

@@ -8,7 +8,7 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="bg-base-100 dark:bg-base-900 pt-6">
+    <footer className="bg-base-100 dark:bg-base-900 pt-66">
       <div className="container px-4 mx-auto">
         <div className="border-t border-base py-4 text-center flex justify-between">
           <p className="text-sm">&copy; 2025 Zeur. All rights reserved.</p>

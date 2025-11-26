@@ -6,6 +6,8 @@ const GlobalProvider = props => {
   const [theme, setTheme] = useState('light');
   const [user, setUser] = useState(null);
   const [menu, setMenu] = useState(false);
+  const [markers, setMarkers] = useState([]);
+  const [portugalGeo, setPortugalGeo] = useState(null);
 
   return (
     <GlobalContext.Provider
@@ -16,6 +18,8 @@ const GlobalProvider = props => {
         setUser,
         menu,
         setMenu,
+        markers, setMarkers, 
+        portugalGeo, setPortugalGeo,
       }}
     >
       {props.children}
