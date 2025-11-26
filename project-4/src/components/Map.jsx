@@ -40,6 +40,11 @@ const Map = () => {
     ]),
   };
 
+  const portugalBounds = [
+    [36.9, -9.5],  // southwest corner
+    [42.2, -6.0],  // northeast corner
+  ];
+
   useEffect(() => {
     setMarkers(markersJson);
     setPortugalGeo(portugalJson);
@@ -60,6 +65,8 @@ const Map = () => {
             zoom={INITIAL_ZOOM}
             scrollWheelZoom={true}
             zoomControl={true}
+            //maxBounds={portugalCoords}
+            //maxBoundsViscosity={1.0}  
             className="map"
           >
             <TileLayer
