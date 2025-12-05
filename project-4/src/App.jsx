@@ -6,7 +6,6 @@ import { Home } from './pages/Home';
 import { NotFound } from './pages/NotFound';
 
 function App() {
-
   return (
     <Suspense>
       <Routes>
@@ -15,7 +14,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
-  )
+  );
 }
 
-export default App
+export default App;

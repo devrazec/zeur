@@ -1,33 +1,37 @@
-import { useMap } from "react-leaflet";
-import L from "leaflet";
-import { useEffect } from "react";
+import { useMap } from 'react-leaflet';
+import L from 'leaflet';
+import { useEffect } from 'react';
 
 const ResetView = ({ center, zoom }) => {
   const map = useMap();
 
   useEffect(() => {
     // Find the existing zoom control container
-    const zoomControl = document.querySelector(".leaflet-control-zoom");
+    const zoomControl = document.querySelector('.leaflet-control-zoom');
 
     if (!zoomControl) return;
 
     // Create new button
-    const btn = L.DomUtil.create("a", "leaflet-control-zoom-reset", zoomControl);
+    const btn = L.DomUtil.create(
+      'a',
+      'leaflet-control-zoom-reset',
+      zoomControl
+    );
 
-    btn.innerHTML = "⟳";
-    btn.href = "#";
-    btn.title = "Return to default view";
+    btn.innerHTML = '⟳';
+    btn.href = '#';
+    btn.title = 'Return to default view';
 
     // Match the styling of other buttons
-    btn.classList.add("leaflet-control-zoom-in"); // apply same CSS dimensions
+    btn.classList.add('leaflet-control-zoom-in'); // apply same CSS dimensions
 
-    btn.style.display = "flex";
-    btn.style.alignItems = "center";
-    btn.style.justifyContent = "center";
-    btn.style.fontSize = "28px";
-    btn.style.fontWeight = "bold";
+    btn.style.display = 'flex';
+    btn.style.alignItems = 'center';
+    btn.style.justifyContent = 'center';
+    btn.style.fontSize = '28px';
+    btn.style.fontWeight = 'bold';
 
-    btn.onclick = (e) => {
+    btn.onclick = e => {
       e.preventDefault();
       map.setView(center, zoom, { animate: true });
     };

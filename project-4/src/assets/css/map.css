@@ -1,6 +1,6 @@
 /* Map.css - pure CSS styles for the Map component */
 
-:root{
+:root {
   --bg: #ffffff;
   --muted: #f3f4f6;
   --card-bg: #ffffff;
@@ -8,7 +8,7 @@
   --text: #374151;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
-  --shadow: 0 6px 20px rgba(15,23,42,0.08);
+  --shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
 }
 
 /* Section wrapper */
@@ -115,7 +115,8 @@
 
 /* Small screens responsiveness */
 @media (max-width: 720px) {
-  .map-card, .map-placeholder {
+  .map-card,
+  .map-placeholder {
     height: 420px;
   }
   .popup-card {
@@ -128,6 +129,31 @@
 
 /* Shimmer animation for skeleton */
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Blinking marker circle */
+.marker-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.5);
+  }
 }

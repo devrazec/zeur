@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css';
 import 'leaflet-draw/dist/leaflet.draw.css';
 
 import markersJson from '../data/markers.json';
 import portugalJson from '../data/portugal.json';
 
-import ResetView from "./ResetView";
-import ShowMyLocation from "./ShowMyLocation";
-import RegionSelector from "./RegionSelector";
+import ResetView from './ResetView';
+import ShowMyLocation from './ShowMyLocation';
+import RegionSelector from './RegionSelector';
 import PolygonEditor from './PolygonEditor';
 
-import L from "leaflet";
+import L from 'leaflet';
 import '../assets/css/map.css';
 
 const INITIAL_CENTER = [39.5, -8];
@@ -41,8 +41,8 @@ const Map = () => {
   };
 
   const portugalBounds = [
-    [36.9, -9.5],  // southwest corner
-    [42.2, -6.0],  // northeast corner
+    [36.9, -9.5], // southwest corner
+    [42.2, -6.0], // northeast corner
   ];
 
   useEffect(() => {
@@ -50,8 +50,17 @@ const Map = () => {
     setPortugalGeo(portugalJson);
   }, []);
 
-  const handlePolygonChange = (geojson) => {
+  const handlePolygonChange = geojson => {
     console.log('Polygon GeoJSON:', geojson);
+  };
+
+  const createBlinkIcon = (color = '#ff0000') => {
+    return L.divIcon({
+      className: 'blinking-marker', // optional for global CSS
+      html: `<div class="marker-circle" style="background-color: ${color}"></div>`,
+      iconSize: [16, 16],
+      iconAnchor: [8, 8], // centers the marker
+    });
   };
 
   return (
@@ -66,12 +75,10 @@ const Map = () => {
             scrollWheelZoom={true}
             zoomControl={true}
             //maxBounds={portugalCoords}
-            //maxBoundsViscosity={1.0}  
+            //maxBoundsViscosity={1.0}
             className="map"
           >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
             {/* Controls */}
             <ResetView center={[39.5, -8]} zoom={7} />
@@ -84,9 +91,9 @@ const Map = () => {
               <GeoJSON
                 data={portugalGeo}
                 style={{
-                  color: "#d35400",
+                  color: '#d35400',
                   weight: 2,
-                  fillColor: "#f1c40f",
+                  fillColor: '#f1c40f',
                   fillOpacity: 0.15,
                 }}
               />
@@ -94,14 +101,18 @@ const Map = () => {
 
             {/* Markers */}
             {markers.map(m => (
-              <Marker key={m.id} position={[m.lat, m.lng]}>
+              <Marker
+                key={m.id}
+                position={[m.lat, m.lng]}
+                icon={createBlinkIcon(m.color)} // pass color from JSON or default
+              >
                 <Popup>
                   <div className="popup-card">
                     <img src={m.image} alt={m.name} className="popup-image" />
                     <h3 className="popup-title">{m.name}</h3>
                     <button
                       className="popup-button"
-                      onClick={() => window.open(m.link, "_blank")}
+                      onClick={() => window.open(m.link, '_blank')}
                     >
                       Learn More
                     </button>
@@ -109,7 +120,6 @@ const Map = () => {
                 </Popup>
               </Marker>
             ))}
-
           </MapContainer>
         </div>
       </div>

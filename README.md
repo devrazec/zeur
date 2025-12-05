@@ -168,3 +168,22 @@ npm i -S leaflet-draw
 npm i -S react-leaflet@next
 npm i -S react-leaflet-cluster
 npm i -S react-leaflet-draw
+
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+Copy files from other project
+.env
+eslint.config.js
+.prettierrc
+.prettierignore
+
+Setup package.json
+
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"preview": "vite preview",
+"lint": "eslint . --ext js,jsx",
+"lint:fix": "eslint . --ext js,jsx --fix",
+"format": "prettier --write ."
+},
