@@ -1,0 +1,33 @@
+{
+  "name": "zeur",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev & sleep 2 && open http://localhost:3000/zeur",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "predeploy": "echo > out/.nojekyll",
+    "deploy": "gh-pages -d out"
+  },
+  "dependencies": {
+    "next": "15.5.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devrazec/zeur.git"
+  },
+  "homepage": "https://github.com/devrazec/zeur",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.6",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.7.4"
+  }
+}
