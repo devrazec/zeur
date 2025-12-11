@@ -95,14 +95,14 @@ npm i -S mongodb
 npm i -S firebase
 npm i -S better-sqlite3
 
-
--- Create Global React Context
-
-
 -- Copy files to app folder
 robot
 sidemap
 not-found
+
+-- Create Global React Context
+
+-- Commands
 
 npm run format
 npm run lint
@@ -112,7 +112,9 @@ npm run deploy
 ```
 
 # Demo
+
 https://devrazec.github.io/zeur
 
 # Project
+
 https://github.com/devrazec/zeur
