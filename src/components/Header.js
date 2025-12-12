@@ -1,24 +1,14 @@
 'use client';
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import MobilePanel from '../components/MobilePanel';
 import SearchField from '../components/SearchField';
 import FilterBar from '../components/FilterBar';
 import { Image } from 'primereact/image';
 const Header = () => {
-  const {
-    darkMode,
-    setDarkMode,
-    selectedLanguage,
-    setSelectedLanguage,
-    language,
-    setLanguage,
-    mobileDevice,
-    setMobileDevice,
-    mobilePanel,
-    setMobilePanel,
-  } = useContext(GlobalContext);
+  const { mobileDevice, mobilePanel, setMobilePanel } =
+    useContext(GlobalContext);
 
   return (
     <div className="surface-ground">
@@ -36,7 +26,9 @@ const Header = () => {
 
           <Image
             src={
-              mobileDevice ? '/zeur/img/logo250x80.png' : '/zeur/img/logo250x80.png'
+              mobileDevice
+                ? '/zeur/img/logo250x80.png'
+                : '/zeur/img/logo250x80.png'
             }
             alt="logo"
             height={mobileDevice ? '40px' : '50px'}
@@ -57,7 +49,6 @@ const Header = () => {
         </div>
 
         <div className="hidden lg:flex align-items-center gap-5">
-
           <div className="text-sm text-left cursor-pointer">
             <div>Reporte</div>
             <div className="font-bold">Ocorrências</div>
@@ -72,9 +63,7 @@ const Header = () => {
             <div>Entre em</div>
             <div className="font-bold">Contato</div>
           </div>
-
         </div>
-
       </div>
 
       <FilterBar />

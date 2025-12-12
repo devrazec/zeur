@@ -1,28 +1,9 @@
 'use client';
 
-import React, { useContext, useEffect } from 'react';
-import { GlobalContext } from '../context/GlobalContext';
-import { Box, MenuItem, Select, Typography, Menu } from '@mui/material';
+import React from 'react';
+import { Box } from '@mui/material';
 
 const FilterBar = () => {
-  const {
-    darkMode,
-    setDarkMode,
-    mobileDevice,
-    setMobileDevice,
-    mobilePanel,
-    setMobilePanel,
-    selectedLanguage,
-    setSelectedLanguage,
-    language,
-    setLanguage,
-    selectedProduct,
-    setSelectedProduct,
-    product,
-    setProduct,
-    filteredProduct,
-  } = useContext(GlobalContext);
-
   return (
     <Box
       sx={{
@@ -42,9 +23,7 @@ const FilterBar = () => {
           height: 6,
         },
       }}
-    >
- 
-    </Box>
+    ></Box>
   );
 };
 

@@ -1,20 +1,13 @@
 'use client';
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import { Button } from 'primereact/button';
 import { Sidebar } from 'primereact/sidebar';
 import { Image } from 'primereact/image';
 
 const MobilePanel = () => {
-  const {
-    darkMode,
-    setDarkMode,
-    mobileDevice,
-    setMobileDevice,
-    mobilePanel,
-    setMobilePanel,
-  } = useContext(GlobalContext);
+  const { mobilePanel, setMobilePanel } = useContext(GlobalContext);
 
   return (
     <Sidebar

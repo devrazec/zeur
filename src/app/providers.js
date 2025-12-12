@@ -9,11 +9,8 @@ import { GlobalContext } from '../context/GlobalContext';
 export default function Providers({ children }) {
   const {
     darkMode,
-    setDarkMode,
-    mobileDevice,
+
     setMobileDevice,
-    mobilePanel,
-    setMobilePanel,
   } = useContext(GlobalContext);
 
   const baseTheme = useTheme();

@@ -1,46 +1,16 @@
 'use client';
 
-import React, { useContext, useState } from 'react';
-import { Box, Paper, Button } from '@mui/material';
+import React, { useContext } from 'react';
+import { Box, Paper } from '@mui/material';
 import { GlobalContext } from '../context/GlobalContext';
+import dynamic from 'next/dynamic';
+
+const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
+  ssr: false,
+});
 
 const Content = () => {
-  const {
-    darkMode,
-    setDarkMode,
-    mobileDevice,
-    setMobileDevice,
-    mobilePanel,
-    setMobilePanel,
-    selectedLanguage,
-    setSelectedLanguage,
-    language,
-    setLanguage,
-    selectedProduct,
-    setSelectedProduct,
-    product,
-    setProduct,
-    selectedCity,
-    setSelectedCity,
-    city,
-    setCity,
-    selectedCategory,
-    setSelectedCategory,
-    category,
-    setCategory,
-    selectedColor,
-    setSelectedColor,
-    color,
-    setColor,
-    selectedGender,
-    setSelectedGender,
-    gender,
-    setGender,
-    geoLocation,
-    setGeoLocation,
-    mapPanel,
-    setMapPanel,
-  } = useContext(GlobalContext);
+  const { mapPanel } = useContext(GlobalContext);
 
   return (
     <Box
@@ -71,8 +41,7 @@ const Content = () => {
             overflow: 'hidden',
           }}
         >
-          <Box sx={{ flex: 1, overflowY: 'auto' }}>
-          </Box>
+          <Box sx={{ flex: 1, overflowY: 'auto' }}></Box>
         </Paper>
       </Box>
 
@@ -100,6 +69,7 @@ const Content = () => {
                 overflow: 'hidden',
               }}
             >
+              <LeafletMap />
             </Box>
           </Paper>
         </Box>

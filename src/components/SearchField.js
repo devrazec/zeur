@@ -7,13 +7,11 @@ import { Button } from 'primereact/button';
 
 const SearchField = () => {
   const {
-    dataProduct,
     selectedProductName,
     setSelectedProductName,
     setSelectedProduct,
     setHoverProductId,
     filteredProduct,
-    setFilteredProduct,
   } = useContext(GlobalContext);
 
   const [filteredNames, setFilteredNames] = useState([]);

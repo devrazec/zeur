@@ -1,27 +1,10 @@
 'use client';
 
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 
-import geoPortugalJson from '../data/geo-portugal.json';
-import geoLisbonJson from '../data/geo-lisbon.json';
-import geoPortoJson from '../data/geo-porto.json';
-import geoFaroJson from '../data/geo-faro.json';
-import geoCoimbraJson from '../data/geo-coimbra.json';
-import geoBragaJson from '../data/geo-braga.json';
-import geoBragancaJson from '../data/geo-braganca.json';
-import geoLeiriaJson from '../data/geo-leiria.json';
-import geoGuardaJson from '../data/geo-guarda.json';
-import geoBejaJson from '../data/geo-beja.json';
-import geoVianaJson from '../data/geo-viana.json';
-import geoVilarealJson from '../data/geo-vilareal.json';
-import geoSetubalJson from '../data/geo-setubal.json';
-import storeProductJson from '../data/store-product.json';
-import mongodbImageJson from '../data/mongodb-image.json';
-
-import dataProductJson from '../data/data-product.json';
-import dataProductNameJson from '../data/data-product-name.json';
-import dataSellerNameJson from '../data/data-seller-name.json';
-import dataBrokerJson from '../data/data-broker.json';
+import geoBrazilJson from '../data/geo-brazil.json';
+import geoSaoPauloJson from '../data/geo-sao-paulo.json';
+import geoMetropolitanaJson from '../data/geo-metropolitana.json';
 
 export const GlobalContext = createContext();
 
@@ -30,12 +13,7 @@ export function GlobalProvider({ children }) {
   const [mobileDevice, setMobileDevice] = useState(false);
 
   const [mobilePanel, setMobilePanel] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('EN');
-  const [language, setLanguage] = useState([
-    { name: 'English', code: 'EN', icon: 'fi fi-gb' },
-    { name: 'Portuguese', code: 'PT', icon: 'fi fi-pt' },
-    { name: 'Spanish', code: 'ES', icon: 'fi fi-es' },
-  ]);
+
   const [city, setCity] = useState([
     { label: 'Lisbon', value: 'Lisbon', colorCode: '#1A73E8' },
     { label: 'Porto', value: 'Porto', colorCode: '#E91E63' },
@@ -117,8 +95,8 @@ export function GlobalProvider({ children }) {
   ]);
   const [selectedGender, setSelectedGender] = useState([]);
 
-  const [geoZoomView, setGeoZoomView] = useState(7);
-  const [geoInitialView, setGeoInitialView] = useState([39.3999, -8.2245]);
+  const [geoZoomView, setGeoZoomView] = useState(6);
+  const [geoInitialView, setGeoInitialView] = useState([-23.55053, -46.63348]);
 
   const [geoCityBounds, setGeoCityBounds] = useState({
     Lisbon: { latMin: 38.69, latMax: 38.82, lngMin: -9.25, lngMax: -9.05 },
@@ -135,100 +113,12 @@ export function GlobalProvider({ children }) {
     Setubal: { latMin: 38.51, latMax: 38.56, lngMin: -8.92, lngMax: -8.84 },
   });
 
-  const [geoPortugal, setGeoPortugal] = useState(geoPortugalJson);
-  const [geoLisbon, setGeoLisbon] = useState(geoLisbonJson);
-  const [geoPorto, setGeoPorto] = useState(geoPortoJson);
-  const [geoFaro, setGeoFaro] = useState(geoFaroJson);
-  const [geoCoimbra, setGeoCoimbra] = useState(geoCoimbraJson);
-  const [geoBraga, setGeoBraga] = useState(geoBragaJson);
-  const [geoBraganca, setGeoBraganca] = useState(geoBragancaJson);
-  const [geoLeiria, setGeoLeiria] = useState(geoLeiriaJson);
-  const [geoGuarda, setGeoGuarda] = useState(geoGuardaJson);
-  const [geoBeja, setGeoBeja] = useState(geoBejaJson);
-  const [geoViana, setGeoViana] = useState(geoVianaJson);
-  const [geoVilaReal, setGeoVilaReal] = useState(geoVilarealJson);
-  const [geoSetubal, setGeoSetubal] = useState(geoSetubalJson);
-  const [storeProduct, setStoreProduct] = useState(storeProductJson);
+  const [geoBrazil, setGeoBrazil] = useState(geoBrazilJson);
+  const [geoSaoPaulo, setGeoSaoPaulo] = useState(geoSaoPauloJson);
+  const [geoMetropolitana, setGeoMetropolitana] =
+    useState(geoMetropolitanaJson);
 
-  //const [dataProduct, setDataProduct] = useState(dataProductJson);
-  const [dataProduct, setDataProduct] = useState(dataProductJson.slice(0, 200));
-
-  const [dataProductName, setDataProductName] = useState(dataProductNameJson);
-  const [dataSellerName, setDataSellerName] = useState(dataSellerNameJson);
-  const [dataBroker, setDataBroker] = useState(dataBrokerJson);
-
-  const [sortField, setSortField] = useState(null);
-  const [sortOrder, setSortOrder] = useState(null);
-
-  const [productLayout, setProductLayout] = useState('grid');
-
-  const [selectedProduct, setSelectedProduct] = useState([]);
-  const [selectedProductId, setSelectedProductId] = useState(null);
-  const [hoverProductId, setHoverProductId] = useState(null);
-  const [selectedProductName, setSelectedProductName] = useState(null);
-  const [filteredProduct, setFilteredProduct] = useState([]);
   const [mapPanel, setMapPanel] = useState(true);
-
-  const [mongodbImage, setMongodbImage] = useState(mongodbImageJson);
-
-  useEffect(() => {
-    if (!dataProduct) {
-      setFilteredProduct([]);
-      return;
-    }
-
-    let filtered = [...dataProduct];
-
-    if (selectedCategory.length > 0) {
-      filtered = filtered.filter(p => selectedCategory.includes(p.category));
-    }
-    if (selectedCity.length > 0) {
-      filtered = filtered.filter(p => selectedCity.includes(p.location));
-    }
-    if (selectedColor.length > 0) {
-      filtered = filtered.filter(p => selectedColor.includes(p.color));
-    }
-    if (selectedGender.length > 0) {
-      filtered = filtered.filter(p => selectedGender.includes(p.gender));
-    }
-    if (selectedProductName) {
-      filtered = filtered.filter(p =>
-        p.name.toLowerCase().includes(selectedProductName.toLowerCase())
-      );
-    }
-
-    // Sorting
-    if (sortField) {
-      filtered.sort((a, b) => {
-        let valA = a[sortField];
-        let valB = b[sortField];
-
-        if (sortField === 'price') {
-          // Remove any non-digit characters (like currency symbols) and convert to number
-          valA = Number(String(valA).replace(/[^\d.-]/g, ''));
-          valB = Number(String(valB).replace(/[^\d.-]/g, ''));
-        } else if (typeof valA === 'string') {
-          valA = valA.toLowerCase();
-          valB = valB.toLowerCase();
-        }
-
-        if (valA < valB) return sortOrder === 1 ? -1 : 1;
-        if (valA > valB) return sortOrder === 1 ? 1 : -1;
-        return 0;
-      });
-    }
-
-    setFilteredProduct(filtered);
-  }, [
-    dataProduct,
-    selectedCategory,
-    selectedCity,
-    selectedColor,
-    selectedGender,
-    selectedProductName,
-    sortField,
-    sortOrder,
-  ]);
 
   return (
     <GlobalContext.Provider
@@ -239,10 +129,7 @@ export function GlobalProvider({ children }) {
         setMobileDevice,
         mobilePanel,
         setMobilePanel,
-        selectedLanguage,
-        setSelectedLanguage,
-        language,
-        setLanguage,
+
         selectedCity,
         setSelectedCity,
         city,
@@ -263,64 +150,19 @@ export function GlobalProvider({ children }) {
         setGeoZoomView,
         geoInitialView,
         setGeoInitialView,
-        geoPortugal,
-        setGeoPortugal,
-        geoLisbon,
-        setGeoLisbon,
-        geoPorto,
-        setGeoPorto,
-        geoFaro,
-        setGeoFaro,
-        geoCoimbra,
-        setGeoCoimbra,
-        geoBraga,
-        setGeoBraga,
-        geoBraganca,
-        setGeoBraganca,
-        geoLeiria,
-        setGeoLeiria,
-        geoGuarda,
-        setGeoGuarda,
-        geoBeja,
-        setGeoBeja,
-        geoViana,
-        setGeoViana,
-        geoVilaReal,
-        setGeoVilaReal,
-        geoSetubal,
-        setGeoSetubal,
+
+        geoBrazil,
+        setGeoBrazil,
+        geoSaoPaulo,
+        setGeoSaoPaulo,
+        geoMetropolitana,
+        setGeoMetropolitana,
+
         geoCityBounds,
         setGeoCityBounds,
-        storeProduct,
-        setStoreProduct,
-        dataProduct,
-        setDataProduct,
-        dataProductName,
-        setDataProductName,
-        dataSellerName,
-        setDataSellerName,
-        dataBroker,
-        setDataBroker,
-        sortField,
-        setSortField,
-        sortOrder,
-        setSortOrder,
-        productLayout,
-        setProductLayout,
-        selectedProductId,
-        setSelectedProductId,
-        selectedProduct,
-        setSelectedProduct,
-        hoverProductId,
-        setHoverProductId,
-        selectedProductName,
-        setSelectedProductName,
-        filteredProduct,
-        setFilteredProduct,
+
         mapPanel,
         setMapPanel,
-        mongodbImage,
-        setMongodbImage,
       }}
     >
       {children}
