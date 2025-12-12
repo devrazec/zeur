@@ -103,11 +103,16 @@ not-found
 -- Create Global React Context
 
 -- Commands
-x
+
 npm run format
 npm run lint
 npm run build
 npm run deploy
+
+-- Remove from Git
+
+git rm -r --cached .env
+git rm -r --cached .DS_Store
 
 ```
 

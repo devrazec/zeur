@@ -43,7 +43,6 @@
     "type": "git",
     "url": "git+https://github.com/devrazec/zeur.git"
   },
-  "homepage": "https://github.com/devrazec/zeur",
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
