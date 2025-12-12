@@ -4,20 +4,20 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import { MultiSelect } from 'primereact/multiselect';
 
-const SelectLocation = () => {
-  const { selectedLocation, setSelectedLocation, location } =
+const SelectPriority = () => {
+  const { selectedPriority, setSelectedPriority, priority } =
     useContext(GlobalContext);
 
   return (
     <div className="p-field">
       <MultiSelect
-        value={selectedLocation}
-        onChange={e => setSelectedLocation(e.value)}
-        options={location}
+        value={selectedPriority}
+        onChange={e => setSelectedPriority(e.value)}
+        options={priority}
         optionLabel="label"
         showClear={true}
-        placeholder="Localização"
-        selectedItemsLabel="Localização ({0})"
+        placeholder="Prioridade"
+        selectedItemsLabel="Prioridade ({0})"
         maxSelectedLabels={0}
         //className="w-full px-3 text-base text-white"
         //panelClassName="custom-multiselect-panel"
@@ -27,7 +27,7 @@ const SelectLocation = () => {
         style={{
           borderRadius: '999px',
           //padding: "0.1rem",
-          backgroundColor: selectedLocation.length > 0 ? '#057642' : '#00473C',
+          backgroundColor: selectedPriority.length > 0 ? '#057642' : '#00473C',
           borderColor: '#ccc',
           border: '1px solid white',
           color: 'white',
@@ -70,4 +70,4 @@ const SelectLocation = () => {
   );
 };
 
-export default React.memo(SelectLocation);
+export default React.memo(SelectPriority);

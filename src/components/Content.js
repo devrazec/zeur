@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Paper } from '@mui/material';
 import { GlobalContext } from '../context/GlobalContext';
 import dynamic from 'next/dynamic';
@@ -10,23 +10,18 @@ const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
 });
 
 const Content = () => {
-  const { dataPanel, mapPanel } = useContext(GlobalContext);
+  const { dataPanel, mapPanel, setDataPanel, setMapPanel } = useContext(GlobalContext);
 
-  // If both panels are hidden → show nothing (or a placeholder)
-  if (!dataPanel && !mapPanel)
-    return (
-      <Box
-        sx={{
-          height: 'calc(100vh - 128px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'text.secondary',
-        }}
-      >
-        No panels visible
-      </Box>
-    );
+  //
+  // 🔒 ALWAYS KEEP AT LEAST ONE PANEL VISIBLE
+  //
+  useEffect(() => {
+    if (!dataPanel && !mapPanel) {
+      // Prefer keeping the data panel visible
+      setDataPanel(true);
+    }
+  }, [dataPanel, mapPanel, setDataPanel]);
+
 
   return (
     <Box
@@ -45,7 +40,7 @@ const Content = () => {
       {dataPanel && (
         <Box
           sx={{
-            flex: mapPanel ? 1 : 2, // If map hidden → table expands
+            flex: mapPanel ? 1 : 2, 
             minWidth: 0,
             height: { xs: mapPanel ? '50%' : '100%', md: '100%' },
           }}
@@ -69,7 +64,7 @@ const Content = () => {
       {mapPanel && (
         <Box
           sx={{
-            flex: dataPanel ? 1 : 2, // If table hidden → map expands
+            flex: dataPanel ? 1 : 2, 
             minWidth: 0,
             height: { xs: dataPanel ? '50%' : '100%', md: '100%' },
           }}
@@ -89,7 +84,7 @@ const Content = () => {
                 overflow: 'hidden',
               }}
             >
-              <LeafletMap />
+              <LeafletMap key={`${mapPanel}-${dataPanel}`} />
             </Box>
           </Paper>
         </Box>

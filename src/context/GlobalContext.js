@@ -106,8 +106,8 @@ export function GlobalProvider({ children }) {
   ]);
   const [selectedPriority, setSelectedPriority] = useState([]);
 
-  const [geoZoomView, setGeoZoomView] = useState(6);
-  const [geoInitialView, setGeoInitialView] = useState([-23.55053, -46.63348]);
+  const [geoZoomView, setGeoZoomView] = useState(9);
+  const [geoInitialView, setGeoInitialView] = useState([-23.55, -46.63]);
 
   const [geoBrazil, setGeoBrazil] = useState(geoBrazilJson);
   const [geoSaoPaulo, setGeoSaoPaulo] = useState(geoSaoPauloJson);

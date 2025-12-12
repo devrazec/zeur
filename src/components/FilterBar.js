@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 import PanelLayout from '../components/PanelLayout';
 import SelectCategory from '../components/SelectCategory';
 import SelectLocation from '../components/SelectLocation';
+import SelectPriority from '../components/SelectPriority';
+
 
 const FilterBar = () => {
   return (
@@ -31,7 +33,7 @@ const FilterBar = () => {
       <PanelLayout />
       <SelectCategory />
       <SelectLocation />
-
+      <SelectPriority />
     </Box>
   );
 };

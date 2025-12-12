@@ -55,7 +55,7 @@ const SearchField = () => {
         value={selectedProductName || ''}
         suggestions={filteredNames}
         completeMethod={searchNames}
-        placeholder="Pesquisar Ocorrências"
+        placeholder="Pesquisar"
         className="w-full"
         inputClassName="p-inputtext-lg py-2 text-lg border-round-md pl-2 pr-9 w-full"
         onChange={e => onSelectName(e.value)}

@@ -5,11 +5,8 @@ import { GlobalContext } from '../context/GlobalContext';
 import { MultiSelect } from 'primereact/multiselect';
 
 const SelectCategory = () => {
-  const {
-    selectedCategory,
-    setSelectedCategory,
-    category,
-  } = useContext(GlobalContext);
+  const { selectedCategory, setSelectedCategory, category } =
+    useContext(GlobalContext);
 
   return (
     <div className="p-field">
@@ -19,8 +16,8 @@ const SelectCategory = () => {
         options={category}
         optionLabel="label"
         showClear={true}
-        placeholder="Category"
-        selectedItemsLabel="Category ({0})"
+        placeholder="Categoria"
+        selectedItemsLabel="Categoria ({0})"
         maxSelectedLabels={0}
         //className="w-full px-3 text-base text-white"
         //panelClassName="custom-multiselect-panel"
@@ -35,7 +32,7 @@ const SelectCategory = () => {
           border: '1px solid white',
           color: 'white',
           height: '40px',
-          minWidth: '190px',
+          minWidth: '200px',
         }}
         itemTemplate={option => (
           <div
