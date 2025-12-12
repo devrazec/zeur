@@ -7,9 +7,12 @@ import { Sidebar } from 'primereact/sidebar';
 import { Image } from 'primereact/image';
 import { Divider } from "primereact/divider"
 import DialogLogin from '../components/DialogLogin';
+import DialogOcorrencia from '../components/DialogOcorrencia';
+import DialogMetropolitana from '../components/DialogMetropolitana';
+import DialogMunicipal from '../components/DialogMunicipal';
 
 const MobilePanel = () => {
-  const { mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, } = useContext(GlobalContext);
+  const { mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, setDialogOcorrencia, } = useContext(GlobalContext);
 
   return (
     <>
@@ -66,6 +69,7 @@ const MobilePanel = () => {
                 className="custom-nav-btn p-button-text w-full text-left"
                 icon="pi pi-pencil"
                 label="Registre Ocorrência"
+                onClick={() => setDialogOcorrencia(true)}
               />
             </li>
             <Divider />
@@ -105,6 +109,7 @@ const MobilePanel = () => {
                 className="custom-nav-btn p-button-text w-full text-left"
                 icon="pi pi-envelope"
                 label="Entre em Contato"
+                
               />
             </li>
 
@@ -113,6 +118,10 @@ const MobilePanel = () => {
       </Sidebar>
 
       <DialogLogin />
+      <DialogOcorrencia />
+      <DialogMetropolitana />
+      <DialogMunicipal />
+      
     </>
   );
 };

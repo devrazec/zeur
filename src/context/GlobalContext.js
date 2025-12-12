@@ -129,7 +129,8 @@ export function GlobalProvider({ children }) {
   const [dialogLogin, setDialogLogin] = useState(false);
   const [dialogMetropolitana, setDialogMetropolitana] = useState(false);
   const [dialogMunicipal, setDialogMunicipal] = useState(false);
-
+  const [dialogOcorrencia, setDialogOcorrencia] = useState(false);
+  
   return (
     <GlobalContext.Provider
       value={{
@@ -191,6 +192,7 @@ export function GlobalProvider({ children }) {
         dialogLogin, setDialogLogin,
         dialogMetropolitana, setDialogMetropolitana,
         dialogMunicipal, setDialogMunicipal,
+        dialogOcorrencia, setDialogOcorrencia,
 
       }}
     >

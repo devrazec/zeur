@@ -7,19 +7,19 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { InputOtp } from 'primereact/inputotp';
 
-const DialogLogin = () => {
-  const { dialogLogin, setDialogLogin } = useContext(GlobalContext);
+const DialogOcorrencia = () => {
+  const { dialogOcorrencia, setDialogOcorrencia } = useContext(GlobalContext);
 
   const [token, setTokens] = useState();
 
   return (
     <div className="card flex justify-content-center">
       <Dialog
-        header="Autenticação"
+        header="Regitro de Ocorrência"
         draggable={false}
         resizable={false}
-        visible={dialogLogin}
-        onHide={() => setDialogLogin(false)}
+        visible={dialogOcorrencia}
+        onHide={() => setDialogOcorrencia(false)}
         style={{ width: '50vw', maxWidth: '400px' }}
         breakpoints={{ '960px': '75vw', '641px': '100vw' }}
       >
@@ -57,4 +57,4 @@ const DialogLogin = () => {
   );
 };
 
-export default React.memo(DialogLogin);
+export default React.memo(DialogOcorrencia);

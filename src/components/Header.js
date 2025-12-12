@@ -9,11 +9,12 @@ import { Image } from 'primereact/image';
 import { Button } from "primereact/button";
 
 import DialogLogin from '../components/DialogLogin';
+import DialogOcorrencia from '../components/DialogOcorrencia';
 import DialogMetropolitana from '../components/DialogMetropolitana';
 import DialogMunicipal from '../components/DialogMunicipal';
 
 const Header = () => {
-  const { mobileDevice, mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, } =
+  const { mobileDevice, mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, setDialogOcorrencia, } =
     useContext(GlobalContext);
 
   return (
@@ -60,6 +61,7 @@ const Header = () => {
                 <div className="font-bold">Ocorrência</div>
               </div>
             }
+            onClick={() => setDialogOcorrencia(true)}
           />
 
           <Button
@@ -115,10 +117,10 @@ const Header = () => {
       <MobilePanel />
 
       <DialogLogin />
-
+      <DialogOcorrencia />
       <DialogMetropolitana />
-
       <DialogMunicipal />
+
     </div>
   );
 };
