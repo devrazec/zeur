@@ -10,7 +10,8 @@ const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
 });
 
 const Content = () => {
-  const { dataPanel, mapPanel, setDataPanel, setMapPanel } = useContext(GlobalContext);
+  const { dataPanel, mapPanel, setDataPanel, setMapPanel } =
+    useContext(GlobalContext);
 
   //
   // 🔒 ALWAYS KEEP AT LEAST ONE PANEL VISIBLE
@@ -21,7 +22,6 @@ const Content = () => {
       setDataPanel(true);
     }
   }, [dataPanel, mapPanel, setDataPanel]);
-
 
   return (
     <Box
@@ -40,7 +40,7 @@ const Content = () => {
       {dataPanel && (
         <Box
           sx={{
-            flex: mapPanel ? 1 : 2, 
+            flex: mapPanel ? 1 : 2,
             minWidth: 0,
             height: { xs: mapPanel ? '50%' : '100%', md: '100%' },
           }}
@@ -64,7 +64,7 @@ const Content = () => {
       {mapPanel && (
         <Box
           sx={{
-            flex: dataPanel ? 1 : 2, 
+            flex: dataPanel ? 1 : 2,
             minWidth: 0,
             height: { xs: dataPanel ? '50%' : '100%', md: '100%' },
           }}

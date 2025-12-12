@@ -8,7 +8,6 @@ import SelectCategory from '../components/SelectCategory';
 import SelectLocation from '../components/SelectLocation';
 import SelectPriority from '../components/SelectPriority';
 
-
 const FilterBar = () => {
   return (
     <Box
