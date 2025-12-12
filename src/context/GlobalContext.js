@@ -15,9 +15,6 @@ import geoEmbuArtesJson from '../data/geo-embu-artes.json';
 import geoVargemPaulistaJson from '../data/geo-vargem-paulista.json';
 import geoTaboaoSerraJson from '../data/geo-taboao-serra.json';
 
-
-
-
 export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
@@ -26,6 +23,7 @@ export function GlobalProvider({ children }) {
   const [mobilePanel, setMobilePanel] = useState(false);
   const [mapPanel, setMapPanel] = useState(true);
   const [dataPanel, setDataPanel] = useState(true);
+  const [panelLayout, setPanelLayout] = useState('grid');
 
   const [location, setlocation] = useState([
     {
@@ -40,21 +38,21 @@ export function GlobalProvider({ children }) {
       label: 'São Lorenço da Serra',
       value: 2,
       subregion: 'sudoeste',
-      bounds: { latMin: 38.60, latMax: 38.73, lngMin: -9.30, lngMax: -9.10 },
+      bounds: { latMin: 38.6, latMax: 38.73, lngMin: -9.3, lngMax: -9.1 },
     },
     {
       color: '#7e7ef5',
       label: 'Embu-Guaçu',
       value: 3,
       subregion: 'sudoeste',
-      bounds: { latMin: 38.50, latMax: 38.65, lngMin: -9.28, lngMax: -9.08 },
+      bounds: { latMin: 38.5, latMax: 38.65, lngMin: -9.28, lngMax: -9.08 },
     },
     {
       color: '#7e7ef5',
       label: 'Itapecerica da Serra',
       value: 4,
       subregion: 'sudoeste',
-      bounds: { latMin: 38.55, latMax: 38.70, lngMin: -9.27, lngMax: -9.07 },
+      bounds: { latMin: 38.55, latMax: 38.7, lngMin: -9.27, lngMax: -9.07 },
     },
     {
       color: '#7e7ef5',
@@ -68,7 +66,7 @@ export function GlobalProvider({ children }) {
       label: 'Embu das Artes',
       value: 6,
       subregion: 'sudoeste',
-      bounds: { latMin: 38.60, latMax: 38.75, lngMin: -9.24, lngMax: -9.04 },
+      bounds: { latMin: 38.6, latMax: 38.75, lngMin: -9.24, lngMax: -9.04 },
     },
     {
       color: '#7e7ef5',
@@ -113,16 +111,20 @@ export function GlobalProvider({ children }) {
 
   const [geoBrazil, setGeoBrazil] = useState(geoBrazilJson);
   const [geoSaoPaulo, setGeoSaoPaulo] = useState(geoSaoPauloJson);
-  const [geoMetropolitana, setGeoMetropolitana] = useState(geoMetropolitanaJson);
+  const [geoMetropolitana, setGeoMetropolitana] =
+    useState(geoMetropolitanaJson);
   const [geoJuquitiba, setGeoJuquitiba] = useState(geoJuquitibaJson);
   const [geoSaoLorenco, setGeoSaoLorenco] = useState(geoSaoLorencoJson);
   const [geoEmbuGuacu, setGeoEmbuGuacu] = useState(geoEmbuGuacuJson);
-  const [geoItapecericaSerra, setGeoItapecericaSerra] = useState(geoItapecericaSerraJson);
+  const [geoItapecericaSerra, setGeoItapecericaSerra] = useState(
+    geoItapecericaSerraJson
+  );
   const [geoCotia, setGeoCotia] = useState(geoCotiaJson);
   const [geoEmbuArtes, setGeoEmbuArtes] = useState(geoEmbuArtesJson);
-  const [geoVargemPaulista, setGeoVargemPaulista] = useState(geoVargemPaulistaJson);
+  const [geoVargemPaulista, setGeoVargemPaulista] = useState(
+    geoVargemPaulistaJson
+  );
   const [geoTaboaoSerra, setGeoTaboaoSerra] = useState(geoTaboaoSerraJson);
-
 
   return (
     <GlobalContext.Provider
@@ -135,17 +137,23 @@ export function GlobalProvider({ children }) {
         setMobilePanel,
         mapPanel,
         setMapPanel,
-        dataPanel, setDataPanel,
-
+        dataPanel,
+        setDataPanel,
+        panelLayout,
+        setPanelLayout,
         category,
         setCategory,
         selectedCategory,
         setSelectedCategory,
 
-        location, setlocation,
-        selectedLocation, setSelectedLocation,
-        priority, setPriority,
-        selectedPriority, setSelectedPriority,
+        location,
+        setlocation,
+        selectedLocation,
+        setSelectedLocation,
+        priority,
+        setPriority,
+        selectedPriority,
+        setSelectedPriority,
 
         geoZoomView,
         setGeoZoomView,
@@ -182,10 +190,6 @@ export function GlobalProvider({ children }) {
 
         geoTaboaoSerra,
         setGeoTaboaoSerra,
-
-
-
-
       }}
     >
       {children}

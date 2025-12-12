@@ -28,6 +28,7 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 .prettierignore
 .prettierrc
 next.config.mjs
+CNAME
 
 -- Setup package.json
 
@@ -45,8 +46,6 @@ next.config.mjs
 "type": "git",
 "url": "git+https://github.com/devrazec/zeur.git"
 },
-
-"homepage": "https://github.com/devrazec/zeur",
 
 -- Deploy
 
@@ -96,9 +95,9 @@ npm i -S firebase
 npm i -S better-sqlite3
 
 -- Copy files to app folder
-robot
-sidemap
-not-found
+robot.txt
+sidemap.xml
+not-found.js
 
 -- Create Global React Context
 

@@ -3,6 +3,10 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
+import PanelLayout from '../components/PanelLayout';
+import SelectCategory from '../components/SelectCategory';
+import SelectLocation from '../components/SelectLocation';
+
 const FilterBar = () => {
   return (
     <Box
@@ -23,7 +27,12 @@ const FilterBar = () => {
           height: 6,
         },
       }}
-    ></Box>
+    >
+      <PanelLayout />
+      <SelectCategory />
+      <SelectLocation />
+
+    </Box>
   );
 };
 

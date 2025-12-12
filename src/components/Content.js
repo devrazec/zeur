@@ -10,7 +10,23 @@ const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
 });
 
 const Content = () => {
-  const { mapPanel } = useContext(GlobalContext);
+  const { dataPanel, mapPanel } = useContext(GlobalContext);
+
+  // If both panels are hidden → show nothing (or a placeholder)
+  if (!dataPanel && !mapPanel)
+    return (
+      <Box
+        sx={{
+          height: 'calc(100vh - 128px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'text.secondary',
+        }}
+      >
+        No panels visible
+      </Box>
+    );
 
   return (
     <Box
@@ -25,33 +41,37 @@ const Content = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Left Column: Table */}
-      <Box
-        sx={{
-          flex: mapPanel ? 1 : 1, // table takes full width if map hidden
-          minWidth: 0,
-          height: { xs: '50%', md: '100%' },
-        }}
-      >
-        <Paper
+      {/* LEFT PANEL — DATA TABLE */}
+      {dataPanel && (
+        <Box
           sx={{
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            overflow: 'hidden',
+            flex: mapPanel ? 1 : 2, // If map hidden → table expands
+            minWidth: 0,
+            height: { xs: mapPanel ? '50%' : '100%', md: '100%' },
           }}
         >
-          <Box sx={{ flex: 1, overflowY: 'auto' }}></Box>
-        </Paper>
-      </Box>
+          <Paper
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+            }}
+          >
+            <Box sx={{ flex: 1, overflowY: 'auto' }}>
+              {/* Table content here */}
+            </Box>
+          </Paper>
+        </Box>
+      )}
 
-      {/* Right Column: Map */}
+      {/* RIGHT PANEL — MAP */}
       {mapPanel && (
         <Box
           sx={{
-            flex: 1,
+            flex: dataPanel ? 1 : 2, // If table hidden → map expands
             minWidth: 0,
-            height: { xs: '50%', md: '100%' },
+            height: { xs: dataPanel ? '50%' : '100%', md: '100%' },
           }}
         >
           <Paper

@@ -82,23 +82,37 @@ const LocationLayer = () => {
     location.forEach(({ geo, color, label }) => {
       if (!geo) return;
 
-      const defaultStyle = { color, weight: 3, fillColor: color, fillOpacity: 0.3 };
+      const defaultStyle = {
+        color,
+        weight: 3,
+        fillColor: color,
+        fillOpacity: 0.3,
+      };
       const highlightStyle = { weight: 6, fillOpacity: 0.3 };
 
       const layer = L.geoJSON(geo, {
         style: defaultStyle,
         onEachFeature: (feature, layer) => {
-          layer.bindTooltip(label, { permanent: false, direction: 'top', opacity: 0.9 });
+          layer.bindTooltip(label, {
+            permanent: false,
+            direction: 'top',
+            opacity: 0.9,
+          });
 
           layer.on({
             mouseover: () => {
               layer.setStyle(highlightStyle);
-              if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) layer.bringToFront();
+              if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge)
+                layer.bringToFront();
             },
             mouseout: () => layer.setStyle(defaultStyle),
             click: () => {
               const bounds = layer.getBounds();
-              map.fitBounds(bounds, { padding: [30, 30], maxZoom: 11, animate: true });
+              map.fitBounds(bounds, {
+                padding: [30, 30],
+                maxZoom: 11,
+                animate: true,
+              });
             },
           });
         },
@@ -107,7 +121,7 @@ const LocationLayer = () => {
       layers.push(layer);
     });
 
-    return () => layers.forEach((layer) => map.removeLayer(layer));
+    return () => layers.forEach(layer => map.removeLayer(layer));
   }, [map, location]);
 
   return null;
