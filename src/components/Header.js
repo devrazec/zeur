@@ -6,8 +6,14 @@ import MobilePanel from '../components/MobilePanel';
 import SearchField from '../components/SearchField';
 import FilterBar from '../components/FilterBar';
 import { Image } from 'primereact/image';
+import { Button } from "primereact/button";
+
+import DialogLogin from '../components/DialogLogin';
+import DialogMetropolitana from '../components/DialogMetropolitana';
+import DialogMunicipal from '../components/DialogMunicipal';
+
 const Header = () => {
-  const { mobileDevice, mobilePanel, setMobilePanel } =
+  const { mobileDevice, mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, } =
     useContext(GlobalContext);
 
   return (
@@ -45,36 +51,74 @@ const Header = () => {
         </div>
 
         <div className="hidden lg:flex align-items-center gap-5">
-          <div className="text-sm text-left cursor-pointer">
-            <div>Registre</div>
-            <div className="font-bold">Ocorrência</div>
-          </div>
 
-          <div className="text-sm text-left cursor-pointer">
-            <div>Registro</div>
-            <div className="font-bold">ou Login</div>
-          </div>
+          <Button
+            className="custom-nav-btn p-button-text text-left"
+            label={
+              <div className="text-sm leading-tight">
+                <div>Registre</div>
+                <div className="font-bold">Ocorrência</div>
+              </div>
+            }
+          />
 
-          <div className="text-sm text-left cursor-pointer">
-            <div>Região</div>
-            <div className="font-bold">Metropolitâna</div>
-          </div>
+          <Button
+            className="custom-nav-btn p-button-text text-left"
+            label={
+              <div className="text-sm leading-tight">
+                <div>Registro</div>
+                <div className="font-bold">ou Login</div>
+              </div>
+            }
+            onClick={() => setDialogLogin(true)}
+          />
 
-          <div className="text-sm text-left cursor-pointer">
-            <div>Secretaria</div>
-            <div className="font-bold">Municipal</div>
-          </div>
+          <Button
+            className="custom-nav-btn p-button-text text-left"
+            label={
+              <div className="text-sm leading-tight">
+                <div>Região</div>
+                <div className="font-bold">Metropolitana</div>
+              </div>
+            }
+            onClick={() => setDialogMetropolitana(true)}
+          />
 
-          <div className="text-sm text-left cursor-pointer">
-            <div>Entre em</div>
-            <div className="font-bold">Contato</div>
-          </div>
+          <Button
+            className="custom-nav-btn p-button-text text-left"
+            label={
+              <div className="text-sm leading-tight">
+                <div>Secretaria</div>
+                <div className="font-bold">Municipal</div>
+              </div>
+            }
+            onClick={() => setDialogMunicipal(true)}
+          />
+
+          <Button
+            className="custom-nav-btn p-button-text text-left"
+            label={
+              <div className="text-sm leading-tight">
+                <div>Entre em</div>
+                <div className="font-bold">Contato</div>
+              </div>
+            }
+          />
+
         </div>
+
+
       </div>
 
       <FilterBar />
 
       <MobilePanel />
+
+      <DialogLogin />
+
+      <DialogMetropolitana />
+
+      <DialogMunicipal />
     </div>
   );
 };

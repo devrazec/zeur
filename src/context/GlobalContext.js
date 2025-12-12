@@ -126,6 +126,10 @@ export function GlobalProvider({ children }) {
   );
   const [geoTaboaoSerra, setGeoTaboaoSerra] = useState(geoTaboaoSerraJson);
 
+  const [dialogLogin, setDialogLogin] = useState(false);
+  const [dialogMetropolitana, setDialogMetropolitana] = useState(false);
+  const [dialogMunicipal, setDialogMunicipal] = useState(false);
+
   return (
     <GlobalContext.Provider
       value={{
@@ -169,27 +173,25 @@ export function GlobalProvider({ children }) {
 
         geoJuquitiba,
         setGeoJuquitiba,
-
         geoSaoLorenco,
         setGeoSaoLorenco,
-
         geoEmbuGuacu,
         setGeoEmbuGuacu,
-
         geoItapecericaSerra,
         setGeoItapecericaSerra,
-
         geoCotia,
         setGeoCotia,
-
         geoEmbuArtes,
         setGeoEmbuArtes,
-
         geoVargemPaulista,
         setGeoVargemPaulista,
-
         geoTaboaoSerra,
         setGeoTaboaoSerra,
+
+        dialogLogin, setDialogLogin,
+        dialogMetropolitana, setDialogMetropolitana,
+        dialogMunicipal, setDialogMunicipal,
+
       }}
     >
       {children}

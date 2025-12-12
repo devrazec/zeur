@@ -66,3 +66,16 @@ body {
   z-index: 10;
   background-color: var(--surface-card); /* match your card background */
 }
+
+.custom-nav-btn {
+  color: white !important;
+}
+
+.custom-nav-btn .p-button-label {
+  color: white !important;
+}
+
+.custom-nav-btn:hover,
+.custom-nav-btn:hover {
+  background-color: #057642 !important;
+}
