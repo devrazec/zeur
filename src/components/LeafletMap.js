@@ -12,7 +12,7 @@ import BrazilLayer from './BrazilLayer';
 import SaoPauloLayer from './SaoPauloLayer';
 import MetropolitanaLayer from './MetropolitanaLayer';
 
-//import LocationLayer from './LocationLayer';
+import LocationLayer from './LocationLayer';
 import { GlobalContext } from '../context/GlobalContext';
 
 const LeafletMap = () => {
@@ -37,7 +37,7 @@ const LeafletMap = () => {
       <SaoPauloLayer />
       <MetropolitanaLayer />
 
-      {/* <LocationLayer /> */}
+      <LocationLayer />
     </MapContainer>
   );
 };

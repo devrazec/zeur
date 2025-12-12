@@ -4,6 +4,9 @@ import Providers from './providers';
 
 export const metadata = {
   title: 'Zeur - Zeladoria Urbana',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }) {
