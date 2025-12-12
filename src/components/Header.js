@@ -25,11 +25,7 @@ const Header = () => {
           ></i>
 
           <Image
-            src={
-              mobileDevice
-                ? '/zeur/img/logo250x80.png'
-                : '/zeur/img/logo250x80.png'
-            }
+            src={mobileDevice ? '/img/logo250x80.png' : '/img/logo250x80.png'}
             alt="logo"
             height={mobileDevice ? '40px' : '50px'}
           />
@@ -50,13 +46,23 @@ const Header = () => {
 
         <div className="hidden lg:flex align-items-center gap-5">
           <div className="text-sm text-left cursor-pointer">
-            <div>Reporte</div>
-            <div className="font-bold">Ocorrências</div>
+            <div>Registre</div>
+            <div className="font-bold">Ocorrência</div>
           </div>
 
           <div className="text-sm text-left cursor-pointer">
             <div>Registro</div>
             <div className="font-bold">ou Login</div>
+          </div>
+
+          <div className="text-sm text-left cursor-pointer">
+            <div>Região</div>
+            <div className="font-bold">Metropolitâna</div>
+          </div>
+
+          <div className="text-sm text-left cursor-pointer">
+            <div>Secretaria</div>
+            <div className="font-bold">Municipal</div>
           </div>
 
           <div className="text-sm text-left cursor-pointer">

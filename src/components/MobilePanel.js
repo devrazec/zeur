@@ -36,7 +36,7 @@ const MobilePanel = () => {
       >
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <Image src="/zeur/img/logo101x40.png" alt="Logo" height="40px" />
+          <Image src="/img/logo250x80.png" alt="Logo" height="40px" />
         </div>
 
         {/* Close Button */}
@@ -58,7 +58,7 @@ const MobilePanel = () => {
       {/* CONTENT */}
       <div style={{ padding: '1.5rem' }}>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-          <li className="p-mb-3 py-2">Report Ocorrências</li>
+          <li className="p-mb-3 py-2">Registre Ocorrências</li>
           <li className="p-mb-3 py-2">Registro ou Login</li>
           <li className="p-mb-3 py-2">Entre em Contato</li>
         </ul>
