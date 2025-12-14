@@ -25,11 +25,11 @@ const SelectCategory = () => {
           zIndex: 9999,
         }}
         style={{
-          borderRadius: '999px',
+          //borderRadius: '999px',
           //padding: "0.1rem",
           backgroundColor: selectedCategory.length > 0 ? '#057642' : '#00473C',
           borderColor: '#ccc',
-          border: '1px solid white',
+          border: '1px solid #16a34a',
           color: 'white',
           height: '40px',
           minWidth: '200px',

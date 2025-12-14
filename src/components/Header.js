@@ -7,14 +7,26 @@ import SearchField from '../components/SearchField';
 import FilterBar from '../components/FilterBar';
 import { Image } from 'primereact/image';
 import { Button } from "primereact/button";
+import { Divider } from "primereact/divider"
 
 import DialogLogin from '../components/DialogLogin';
 import DialogOcorrencia from '../components/DialogOcorrencia';
+import DialogEvent from '../components/DialogEvent';
 import DialogMetropolitana from '../components/DialogMetropolitana';
 import DialogMunicipal from '../components/DialogMunicipal';
+import DialogAbout from '../components/DialogAbout';
+import DialogZeladoria from '../components/DialogZeladoria';
+import DialogContact from '../components/DialogContact';
+import DialogStepper from '../components/DialogStepper';
+
+import Link from "next/link"
 
 const Header = () => {
-  const { mobileDevice, mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, setDialogOcorrencia, } =
+  const { mobileDevice, mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal,
+    setDialogOcorrencia, dialogEvent, setDialogEvent, dialogAbout, setDialogAbout,
+    setDialogZeladoria,
+    setDialogContact, setDialogStepper,
+  } =
     useContext(GlobalContext);
 
   return (
@@ -39,9 +51,19 @@ const Header = () => {
         </div>
 
         {/* LEFT OF SEARCH — Deliver To */}
-        <div className="hidden lg:flex text-sm flex-column ml-3 cursor-pointer">
-          <div>Zeladoria</div>
-          <div className="font-bold">Urbana</div>
+        <div className="hidden lg:flex text-sm flex-column ml-3">
+          <div class="flex align-items-center justify-content-center">
+            <Button
+              className="custom-nav-btn p-button-text text-left"
+              label={
+                <div className="text-sm leading-tight">
+                  <div>Zeladoria</div>
+                  <div className="font-bold">Urbana</div>
+                </div>
+              }
+              onClick={() => setDialogZeladoria(true)}
+            />
+          </div>
         </div>
 
         {/* SEARCH WITH AUTOCOMPLETE */}
@@ -53,7 +75,7 @@ const Header = () => {
 
         <div className="hidden lg:flex align-items-center gap-5">
 
-          <Button
+          {/* <Button
             className="custom-nav-btn p-button-text text-left"
             label={
               <div className="text-sm leading-tight">
@@ -62,50 +84,86 @@ const Header = () => {
               </div>
             }
             onClick={() => setDialogOcorrencia(true)}
-          />
+          /> */}
 
-          <Button
-            className="custom-nav-btn p-button-text text-left"
-            label={
-              <div className="text-sm leading-tight">
-                <div>Registro</div>
-                <div className="font-bold">ou Login</div>
-              </div>
-            }
-            onClick={() => setDialogLogin(true)}
-          />
+          {/* <Link
+            href="/ocorrencia"
+            className="custom-nav-btn p-button-text text-left block" // keep your styles
+          >
+            <div className="text-sm leading-tight">
+              <div>Registre</div>
+              <div className="font-bold">Ocorrência</div>
+            </div>
+          </Link> */}
 
-          <Button
-            className="custom-nav-btn p-button-text text-left"
-            label={
-              <div className="text-sm leading-tight">
-                <div>Região</div>
-                <div className="font-bold">Metropolitana</div>
-              </div>
-            }
-            onClick={() => setDialogMetropolitana(true)}
-          />
+          <div class="flex align-items-center justify-content-center">
+            <Button
+              className="custom-nav-btn p-button-text text-left"
+              label={
+                <div className="text-sm leading-tight">
+                  <div>Registre</div>
+                  <div className="font-bold">Reclamação</div>
+                </div>
+              }
+              onClick={() => setDialogEvent(true)}
+            />
+          </div>
+          <div class="flex align-items-center justify-content-center">
 
-          <Button
-            className="custom-nav-btn p-button-text text-left"
-            label={
-              <div className="text-sm leading-tight">
-                <div>Secretaria</div>
-                <div className="font-bold">Municipal</div>
-              </div>
-            }
-            onClick={() => setDialogMunicipal(true)}
-          />
+            <Button
+              className="custom-nav-btn p-button-text text-left border-1"
+              label={
+                <div className="text-sm leading-tight">
+                  <div>Registro</div>
+                  <div className="font-bold">ou Login</div>
+                </div>
+              }
+              onClick={() => setDialogLogin(true)}
+            />
+          </div>
 
-          <Button
-            className="custom-nav-btn p-button-text text-left"
-            label={
-              <div className="text-sm leading-tight">
-                <div>Entre em</div>
-                <div className="font-bold">Contato</div>
-              </div>
-            }
-          />
+          <div class="flex align-items-center justify-content-center">
+
+            <Button
+              className="custom-nav-btn p-button-text text-left"
+              label={
+                <div className="text-sm leading-tight">
+                  <div>Região</div>
+                  <div className="font-bold">Metropolitana</div>
+                </div>
+              }
+              onClick={() => setDialogMetropolitana(true)}
+            />
+          </div>
+
+          <div class="flex align-items-center justify-content-center">
+
+            <Button
+              className="custom-nav-btn p-button-text text-left"
+              label={
+                <div className="text-sm leading-tight">
+                  <div>Secretaria</div>
+                  <div className="font-bold">Municipal</div>
+                </div>
+              }
+              onClick={() => setDialogMunicipal(true)}
+            />
+          </div>
+
+          <div class="flex align-items-center justify-content-center">
+
+            <Button
+              className="custom-nav-btn p-button-text text-left"
+              label={
+                <div className="text-sm leading-tight">
+                  <div>Entre em</div>
+                  <div className="font-bold">Contato</div>
+                </div>
+              }
+              onClick={() => setDialogContact(true)}
+            />
+          </div>
+
 
         </div>
 
@@ -118,8 +176,14 @@ const Header = () => {
 
       <DialogLogin />
       <DialogOcorrencia />
+      <DialogEvent />
+
       <DialogMetropolitana />
       <DialogMunicipal />
+      <DialogAbout />
+      <DialogZeladoria />
+      <DialogContact />
+      <DialogStepper />
 
     </div>
   );

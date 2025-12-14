@@ -10,9 +10,15 @@ import DialogLogin from '../components/DialogLogin';
 import DialogOcorrencia from '../components/DialogOcorrencia';
 import DialogMetropolitana from '../components/DialogMetropolitana';
 import DialogMunicipal from '../components/DialogMunicipal';
+import DialogZeladoria from '../components/DialogZeladoria';
+import DialogContact from '../components/DialogContact';
+import DialogStepper from '../components/DialogStepper';
+
 
 const MobilePanel = () => {
-  const { mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal, setDialogOcorrencia, } = useContext(GlobalContext);
+  const { mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana,
+    setDialogMunicipal, setDialogOcorrencia, setDialogEvent, setDialogZeladoria,
+    setDialogContact, setDialogStepper } = useContext(GlobalContext);
 
   return (
     <>
@@ -65,52 +71,93 @@ const MobilePanel = () => {
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
 
             <li className="py-2">
-              <Button
+              {/* <Button
                 className="custom-nav-btn p-button-text w-full text-left"
                 icon="pi pi-pencil"
                 label="Registre Ocorrência"
                 onClick={() => setDialogOcorrencia(true)}
-              />
+              /> */}
+              <div class="flex align-items-center justify-content-center">
+
+                <Button
+                  className="custom-nav-btn p-button-text text-left"
+                  icon="pi pi-cog"
+                  label="Zeladoria Urbana"
+                  onClick={() => setDialogZeladoria(true)}
+                />
+              </div>
+
             </li>
-            <Divider />
 
             <li className="py-2">
-              <Button
+              {/* <Button
                 className="custom-nav-btn p-button-text w-full text-left"
-                icon="pi pi-user"
-                label="Registro ou Login"
-                onClick={() => setDialogLogin(true)}
-              />
+                icon="pi pi-pencil"
+                label="Registre Ocorrência"
+                onClick={() => setDialogOcorrencia(true)}
+              /> */}
+              <div class="flex align-items-center justify-content-center">
+
+                <Button
+                  className="custom-nav-btn p-button-text text-left"
+                  icon="pi pi-pencil"
+                  label="Registre Evento"
+                  onClick={() => setDialogEvent(true)}
+                />
+              </div>
+
             </li>
-            <Divider />
 
             <li className="py-2">
-              <Button
-                className="custom-nav-btn p-button-text w-full text-left"
-                icon="pi pi-map-marker"
-                label="Região Metropolitâna"
-                onClick={() => setDialogMetropolitana(true)}
-              />
+              <div class="flex align-items-center justify-content-center">
+
+                <Button
+                  className="custom-nav-btn p-button-text w-full text-left"
+                  icon="pi pi-user"
+                  label="Registro ou Login"
+                  onClick={() => setDialogLogin(true)}
+                />
+              </div>
+
             </li>
-            <Divider />
 
             <li className="py-2">
-              <Button
-                className="custom-nav-btn p-button-text w-full text-left"
-                icon="pi pi-building"
-                label="Secretaria Municipal"
-                onClick={() => setDialogMunicipal(true)}
-              />
+              <div class="flex align-items-center justify-content-center">
+
+                <Button
+                  className="custom-nav-btn p-button-text w-full text-left"
+                  icon="pi pi-map-marker"
+                  label="Região Metropolitâna"
+                  onClick={() => setDialogMetropolitana(true)}
+                />
+              </div>
+
             </li>
-            <Divider />
 
             <li className="py-2">
-              <Button
-                className="custom-nav-btn p-button-text w-full text-left"
-                icon="pi pi-envelope"
-                label="Entre em Contato"
-                
-              />
+              <div class="flex align-items-center justify-content-center">
+
+                <Button
+                  className="custom-nav-btn p-button-text w-full text-left"
+                  icon="pi pi-building"
+                  label="Secretaria Municipal"
+                  onClick={() => setDialogMunicipal(true)}
+                />
+              </div>
+
+            </li>
+
+            <li className="py-2">
+              <div class="flex align-items-center justify-content-center">
+
+                <Button
+                  className="custom-nav-btn p-button-text w-full text-left"
+                  icon="pi pi-envelope"
+                  label="Entre em Contato"
+                  onClick={() => setDialogContact(true)}
+                />
+              </div>
+
             </li>
 
           </ul>
@@ -121,7 +168,9 @@ const MobilePanel = () => {
       <DialogOcorrencia />
       <DialogMetropolitana />
       <DialogMunicipal />
-      
+      <DialogZeladoria />
+      <DialogContact />
+      <DialogStepper />
     </>
   );
 };

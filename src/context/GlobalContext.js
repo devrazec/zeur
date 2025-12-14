@@ -130,7 +130,24 @@ export function GlobalProvider({ children }) {
   const [dialogMetropolitana, setDialogMetropolitana] = useState(false);
   const [dialogMunicipal, setDialogMunicipal] = useState(false);
   const [dialogOcorrencia, setDialogOcorrencia] = useState(false);
-  
+  const [dialogEvent, setDialogEvent] = useState(false);
+  const [dialogAbout, setDialogAbout] = useState(false);
+  const [dialogStepper, setDialogStepper] = useState(false);
+  const [dialogZeladoria, setDialogZeladoria] = useState(false);
+  const [dialogContact, setDialogContact] = useState(false);
+
+  const [geoEventPinLocation, setGeoEvenPinLocation] = useState({ lat: -23.5489 - 0.05, lng: -46.6388 + 0.18 });
+  const [geoEventMyLocation, setGeoEvenMyLocation] = useState([]);
+  const [geoEventAddressLocation, setGeoEventAddressLocation] = useState([]);
+  const [geoEventZoomView, setGeoEventZoomView] = useState(9);
+  const [geoEventInitialView, setGeoEventInitialView] = useState({ lat: -23.5489 - 0.05, lng: -46.6388 + 0.18 });
+
+  const [eventDate, setEventDate] = useState('');
+  const [eventCategory, setEventCategory] = useState('');
+  const [eventLocation, setEventLocation] = useState('');
+  const [eventPriority, setEventPriority] = useState('');
+  const [eventDescription, setEventDescription] = useState('');
+
   return (
     <GlobalContext.Provider
       value={{
@@ -193,6 +210,26 @@ export function GlobalProvider({ children }) {
         dialogMetropolitana, setDialogMetropolitana,
         dialogMunicipal, setDialogMunicipal,
         dialogOcorrencia, setDialogOcorrencia,
+        dialogEvent, setDialogEvent,
+        dialogAbout, setDialogAbout,
+        dialogStepper, setDialogStepper,
+        dialogZeladoria, setDialogZeladoria,
+        dialogContact, setDialogContact,
+
+        geoEventPinLocation, setGeoEvenPinLocation,
+        geoEventMyLocation, setGeoEvenMyLocation,
+        geoEventAddressLocation, setGeoEventAddressLocation,
+        geoEventZoomView, setGeoEventZoomView,
+        geoEventInitialView, setGeoEventInitialView,
+
+        eventDate, setEventDate,
+        eventCategory, setEventCategory,
+        eventLocation, setEventLocation,
+        eventPriority, setEventPriority,
+        eventDescription, setEventDescription,
+
+
+
 
       }}
     >

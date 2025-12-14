@@ -16,7 +16,7 @@ const DialogMetropolitana = () => {
         style={{ width: '50vw' }} breakpoints={{ '960px': '75vw', '641px': '100vw' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Image
-            className="shadow-2 border-round w-full"
+            className="border-round w-full"
             src="/img/regiao-metropolitana.png"
             alt="Região Metropolitâna"
             width="100%"

@@ -15,18 +15,6 @@ const DialogMunicipal = () => {
     { name: "Arujá", phone: "(11) 4652-7600", url: "https://www.prefeituradearuja.sp.gov.br/" },
     { name: "Barueri", phone: "(11) 4199-1000", url: "https://www.barueri.sp.gov.br/" },
     { name: "Biritiba Mirim", phone: "(11) 4657-9000", url: "https://www.biritibamirim.sp.gov.br/" },
-    { name: "São Paulo", phone: "156", url: "https://www.prefeitura.sp.gov.br/" },
-    { name: "Arujá", phone: "(11) 4652-7600", url: "https://www.prefeituradearuja.sp.gov.br/" },
-    { name: "Barueri", phone: "(11) 4199-1000", url: "https://www.barueri.sp.gov.br/" },
-    { name: "Biritiba Mirim", phone: "(11) 4657-9000", url: "https://www.biritibamirim.sp.gov.br/" },
-    { name: "São Paulo", phone: "156", url: "https://www.prefeitura.sp.gov.br/" },
-    { name: "Arujá", phone: "(11) 4652-7600", url: "https://www.prefeituradearuja.sp.gov.br/" },
-    { name: "Barueri", phone: "(11) 4199-1000", url: "https://www.barueri.sp.gov.br/" },
-    { name: "Biritiba Mirim", phone: "(11) 4657-9000", url: "https://www.biritibamirim.sp.gov.br/" },
-    { name: "São Paulo", phone: "156", url: "https://www.prefeitura.sp.gov.br/" },
-    { name: "Arujá", phone: "(11) 4652-7600", url: "https://www.prefeituradearuja.sp.gov.br/" },
-    { name: "Barueri", phone: "(11) 4199-1000", url: "https://www.barueri.sp.gov.br/" },
-    { name: "Biritiba Mirim", phone: "(11) 4657-9000", url: "https://www.biritibamirim.sp.gov.br/" },
   ];
 
   return (

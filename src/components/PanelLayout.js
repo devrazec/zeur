@@ -20,11 +20,11 @@ const PanelLayout = () => {
         type="button"
         label=""
         style={{
-          borderRadius: '999px',
+          //borderRadius: '999px',
           //padding: "0.1rem",
           backgroundColor: dataPanel ? '#057642' : '#00473C',
           borderColor: '#ccc',
-          border: '1px solid white',
+          border: '1px solid #16a34a',
           color: 'white',
           height: '40px',
           minWidth: '50px',
@@ -36,11 +36,11 @@ const PanelLayout = () => {
         type="button"
         label=""
         style={{
-          borderRadius: '999px',
+          //borderRadius: '999px',
           //padding: "0.1rem",
           backgroundColor: mapPanel ? '#057642' : '#00473C',
           borderColor: '#ccc',
-          border: '1px solid white',
+          border: '1px solid #16a34a',
           color: 'white',
           height: '40px',
           minWidth: '50px',
@@ -52,11 +52,11 @@ const PanelLayout = () => {
         type="button"
         label=""
         style={{
-          borderRadius: '999px',
+          //borderRadius: '999px',
           //padding: "0.1rem",
           backgroundColor: panelLayout === 'list' ? '#057642' : '#00473C',
           borderColor: '#ccc',
-          border: '1px solid white',
+          border: '1px solid #16a34a',
           color: 'white',
           height: '40px',
           minWidth: '50px',
@@ -68,11 +68,11 @@ const PanelLayout = () => {
         type="button"
         label=""
         style={{
-          borderRadius: '999px',
+          //borderRadius: '999px',
           //padding: "0.1rem",
           backgroundColor: panelLayout === 'grid' ? '#057642' : '#00473C',
           borderColor: '#ccc',
-          border: '1px solid white',
+          border: '1px solid #16a34a',
           color: 'white',
           height: '40px',
           minWidth: '50px',

@@ -88,6 +88,10 @@ npm i -S @mui/x-date-pickers dayjs @mui/x-data-grid @mui/x-data-grid-generator u
 
 npm i -S leaflet leaflet-draw react-leaflet@next react-leaflet-cluster react-leaflet-draw
 
+npm i -S @react-google-maps/api or npm i -S @vis.gl/react-google-maps
+
+npm remove @react-google-maps/api
+
 -- Database
 
 npm i -S mongodb
