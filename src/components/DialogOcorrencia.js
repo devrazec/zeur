@@ -28,7 +28,7 @@ const DialogOcorrencia = () => {
     autocomplete.setAttribute('placeholder', 'Digite o endereço');
     autocomplete.setAttribute('country', 'br');
 
-    autocomplete.addEventListener('gmp-placeselect', (event) => {
+    autocomplete.addEventListener('gmp-placeselect', event => {
       const place = event.detail.place;
       if (!place?.location) return;
 
@@ -52,7 +52,7 @@ const DialogOcorrencia = () => {
   /**
    * Handle marker drag end
    */
-  const onMarkerDragEnd = (evt) => {
+  const onMarkerDragEnd = evt => {
     const [lng, lat] = evt.lngLat;
     const newLocation = { lat, lng };
     setLocation(newLocation);

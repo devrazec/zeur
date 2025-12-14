@@ -12,12 +12,19 @@ import GoogleMap from '../../components/GoogleMap';
 
 const EventPage = () => {
   const {
-    eventCategory, setEventCategory,
-    eventLocation, setEventLocation,
-    eventPriority, setEventPriority,
-    eventDescription, setEventDescription,
-    category, location, priority,
-    geoEventPinLocation, geoEventAddressLocation
+    eventCategory,
+    setEventCategory,
+    eventLocation,
+    setEventLocation,
+    eventPriority,
+    setEventPriority,
+    eventDescription,
+    setEventDescription,
+    category,
+    location,
+    priority,
+    geoEventPinLocation,
+    geoEventAddressLocation,
   } = useContext(GlobalContext);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,18 +32,20 @@ const EventPage = () => {
   const items = [
     { label: 'Mapa', icon: 'pi pi-map' },
     { label: 'Evento', icon: 'pi pi-pencil' },
-    { label: 'Imagens', icon: 'pi pi-image' }
+    { label: 'Imagens', icon: 'pi pi-image' },
   ];
 
   return (
     <div className="flex flex-col h-screen p-4 gap-4">
-
       {/* TabMenu */}
-      <TabMenu model={items} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
+      <TabMenu
+        model={items}
+        activeIndex={activeIndex}
+        onTabChange={e => setActiveIndex(e.index)}
+      />
 
       {/* Tab Content */}
       <div className="flex flex-col flex-1 gap-4 overflow-auto">
-
         {/* Tab 1 – Map */}
         {activeIndex === 0 && (
           <div className="flex flex-col gap-3 p-4 border border-gray-300 rounded min-h-[300px]">
@@ -85,7 +94,7 @@ const EventPage = () => {
               <Dropdown
                 inputId="categoria"
                 value={eventCategory}
-                onChange={(e) => setEventCategory(e.value)}
+                onChange={e => setEventCategory(e.value)}
                 options={category}
                 optionLabel="label"
                 showClear
@@ -99,7 +108,7 @@ const EventPage = () => {
               <Dropdown
                 inputId="localizacao"
                 value={eventLocation}
-                onChange={(e) => setEventLocation(e.value)}
+                onChange={e => setEventLocation(e.value)}
                 options={location}
                 optionLabel="label"
                 showClear
@@ -114,7 +123,7 @@ const EventPage = () => {
               <Dropdown
                 inputId="prioridade"
                 value={eventPriority}
-                onChange={(e) => setEventPriority(e.value)}
+                onChange={e => setEventPriority(e.value)}
                 options={priority}
                 optionLabel="label"
                 showClear
@@ -129,7 +138,7 @@ const EventPage = () => {
                 id="descricao"
                 autoResize
                 value={eventDescription}
-                onChange={(e) => setEventDescription(e.target.value)}
+                onChange={e => setEventDescription(e.target.value)}
                 rows={4}
                 placeholder="Descrição"
               />
@@ -155,10 +164,9 @@ const EventPage = () => {
             />
           </div>
         )}
-
       </div>
     </div>
   );
 };
 
-export default EventPage;
+export default React.memo(EventPage);

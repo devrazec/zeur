@@ -10,8 +10,7 @@ const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
 });
 
 const Content = () => {
-  const { dataPanel, mapPanel, setDataPanel, setMapPanel } =
-    useContext(GlobalContext);
+  const { dataPanel, mapPanel, setDataPanel } = useContext(GlobalContext);
 
   //
   // 🔒 ALWAYS KEEP AT LEAST ONE PANEL VISIBLE

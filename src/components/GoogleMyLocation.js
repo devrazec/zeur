@@ -1,20 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useMap } from '@vis.gl/react-google-maps';
 import { GlobalContext } from '../context/GlobalContext';
 
 const GoogleMyLocation = ({ mapZoom, updateAddress }) => {
   const map = useMap();
 
-  const {
-    geoEventZoomView,
-    setGeoEventZoomView,
-    geoEventMyLocation,
-    setGeoEvenMyLocation,
-    setGeoEvenPinLocation,
-    setGeoEventAddressLocation,
-  } = useContext(GlobalContext);
+  const { setGeoEvenMyLocation, setGeoEvenPinLocation } =
+    useContext(GlobalContext);
 
   useEffect(() => {
     if (!map) return;
@@ -37,7 +31,7 @@ const GoogleMyLocation = ({ mapZoom, updateAddress }) => {
 
     button.onclick = () => {
       if (!navigator.geolocation) return alert('Geolocation not supported.');
-      navigator.geolocation.getCurrentPosition((pos) => {
+      navigator.geolocation.getCurrentPosition(pos => {
         const { latitude, longitude } = pos.coords;
         const location = { lat: latitude, lng: longitude };
         setGeoEvenMyLocation(location);

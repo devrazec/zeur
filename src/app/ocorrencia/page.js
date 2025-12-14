@@ -21,7 +21,7 @@ const SingleMarkerMap = () => {
     autocomplete.setAttribute('placeholder', 'Digite o endereço');
     autocomplete.setAttribute('country', 'br');
 
-    autocomplete.addEventListener('gmp-placeselect', (event) => {
+    autocomplete.addEventListener('gmp-placeselect', event => {
       const place = event.detail.place;
       if (!place?.location) return;
 
@@ -44,7 +44,7 @@ const SingleMarkerMap = () => {
   }, []);
 
   // Marker drag
-  const onMarkerDragEnd = (evt) => {
+  const onMarkerDragEnd = evt => {
     const lat = evt.latLng.lat();
     const lng = evt.latLng.lng();
     const newLocation = { lat, lng };
@@ -62,24 +62,24 @@ const SingleMarkerMap = () => {
   };
 
   // Click map to move the same marker
-const onMapClick = (evt) => {
-  // evt.position contains { lat, lng } in @vis.gl/react-google-maps
-  const pos = evt?.position;
-  if (!pos) return;
+  const onMapClick = evt => {
+    // evt.position contains { lat, lng } in @vis.gl/react-google-maps
+    const pos = evt?.position;
+    if (!pos) return;
 
-  const newLocation = { lat: pos.lat, lng: pos.lng };
-  setLocation(newLocation);
+    const newLocation = { lat: pos.lat, lng: pos.lng };
+    setLocation(newLocation);
 
-  // Reverse geocode to update address
-  if (window.google) {
-    const geocoder = new window.google.maps.Geocoder();
-    geocoder.geocode({ location: newLocation }, (results, status) => {
-      if (status === 'OK' && results[0]) {
-        setAddress(results[0].formatted_address);
-      }
-    });
-  }
-};
+    // Reverse geocode to update address
+    if (window.google) {
+      const geocoder = new window.google.maps.Geocoder();
+      geocoder.geocode({ location: newLocation }, (results, status) => {
+        if (status === 'OK' && results[0]) {
+          setAddress(results[0].formatted_address);
+        }
+      });
+    }
+  };
 
   // My Location button
   const handleMyLocation = () => {
@@ -89,7 +89,7 @@ const onMapClick = (evt) => {
     }
 
     navigator.geolocation.getCurrentPosition(
-      (position) => {
+      position => {
         const loc = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
@@ -107,7 +107,7 @@ const onMapClick = (evt) => {
           });
         }
       },
-      (error) => {
+      error => {
         alert('Unable to retrieve your location: ' + error.message);
       }
     );
@@ -215,4 +215,4 @@ const onMapClick = (evt) => {
   );
 };
 
-export default SingleMarkerMap;
+export default React.memo(SingleMarkerMap);

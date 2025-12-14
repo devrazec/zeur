@@ -2,9 +2,6 @@
 
 import React, { useContext, useState } from 'react';
 import { Dialog } from 'primereact/dialog';
-import { InputText } from 'primereact/inputtext';
-import { Dropdown } from 'primereact/dropdown';
-import { InputTextarea } from 'primereact/inputtextarea';
 import { FileUpload } from 'primereact/fileupload';
 import {
   Box,
@@ -14,7 +11,6 @@ import {
   StepLabel,
   TextField,
   Select,
-  MenuItem,
   FormControl,
   InputLabel,
   Button,
@@ -24,12 +20,19 @@ import GoogleMap from './GoogleMap';
 
 const DialogEvent = () => {
   const {
-    dialogEvent, setDialogEvent,
-    eventCategory, setEventCategory,
-    eventLocation, setEventLocation,
-    eventPriority, setEventPriority,
-    eventDescription, setEventDescription,
-    category, location, priority,
+    dialogEvent,
+    setDialogEvent,
+    eventCategory,
+    setEventCategory,
+    eventLocation,
+    setEventLocation,
+    eventPriority,
+    setEventPriority,
+    eventDescription,
+    setEventDescription,
+    category,
+    location,
+    priority,
     geoEventPinLocation,
     geoEventAddressLocation,
   } = useContext(GlobalContext);
@@ -37,8 +40,9 @@ const DialogEvent = () => {
   const [activeStep, setActiveStep] = useState(0);
   const steps = ['Mapa', 'Campos', 'Upload'];
 
-  const handleNext = () => setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
-  const handleBack = () => setActiveStep((prev) => Math.max(prev - 1, 0));
+  const handleNext = () =>
+    setActiveStep(prev => Math.min(prev + 1, steps.length - 1));
+  const handleBack = () => setActiveStep(prev => Math.max(prev - 1, 0));
 
   return (
     <Dialog
@@ -51,8 +55,16 @@ const DialogEvent = () => {
       contentStyle={{ height: '100%', padding: 0, overflow: 'hidden' }}
       breakpoints={{ '960px': '75vw', '641px': '100vw' }}
     >
-      <Box sx={{ width: '100%', height: '100vh', p: 2, display: 'flex', flexDirection: 'column', gap: 2 }}>
-
+      <Box
+        sx={{
+          width: '100%',
+          height: '100vh',
+          p: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+        }}
+      >
         {/* Stepper */}
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => (
@@ -68,12 +80,26 @@ const DialogEvent = () => {
         </Stepper>
 
         {/* Step Content */}
-        <Box sx={{ flex: 1, mt: 2, display: 'flex', flexDirection: 'column', gap: 2 }}>
-
+        <Box
+          sx={{
+            flex: 1,
+            mt: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+          }}
+        >
           {/* Step 1 – Map */}
           {activeStep === 0 && (
-            <Paper sx={{ flex: 1, p: 2, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-          
+            <Paper
+              sx={{
+                flex: 1,
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: 0,
+              }}
+            >
               <TextField
                 label="Endereço"
                 value={geoEventAddressLocation}
@@ -95,7 +121,9 @@ const DialogEvent = () => {
                   disabled
                 />
               </Box>
-              <Box sx={{ flex: 1, minHeight: 0, height: { xs: 200, md: '100%' } }}>
+              <Box
+                sx={{ flex: 1, minHeight: 0, height: { xs: 200, md: '100%' } }}
+              >
                 <GoogleMap style={{ width: '100%', height: '100%' }} />
               </Box>
             </Paper>
@@ -103,18 +131,30 @@ const DialogEvent = () => {
 
           {/* Step 2 – Form Fields */}
           {activeStep === 1 && (
-            <Paper sx={{ flex: 1, p: 2, minHeight: 0, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Paper
+              sx={{
+                flex: 1,
+                p: 2,
+                minHeight: 0,
+                overflowY: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+              }}
+            >
               <FormControl fullWidth>
                 <InputLabel>Categoria</InputLabel>
                 <Select
                   value={eventCategory ?? ''}
-                  onChange={(e) => setEventCategory(e.target.value)}
+                  onChange={e => setEventCategory(e.target.value)}
                   label="Categoria"
                   native
                 >
                   <option aria-label="None" value="" />
-                  {category.map((c) => (
-                    <option key={c.value} value={c.value}>{c.label}</option>
+                  {category.map(c => (
+                    <option key={c.value} value={c.value}>
+                      {c.label}
+                    </option>
                   ))}
                 </Select>
               </FormControl>
@@ -123,13 +163,15 @@ const DialogEvent = () => {
                 <InputLabel>Localização</InputLabel>
                 <Select
                   value={eventLocation ?? ''}
-                  onChange={(e) => setEventLocation(e.target.value)}
+                  onChange={e => setEventLocation(e.target.value)}
                   label="Localização"
                   native
                 >
                   <option aria-label="None" value="" />
-                  {location.map((l) => (
-                    <option key={l.value} value={l.value}>{l.label}</option>
+                  {location.map(l => (
+                    <option key={l.value} value={l.value}>
+                      {l.label}
+                    </option>
                   ))}
                 </Select>
               </FormControl>
@@ -138,13 +180,15 @@ const DialogEvent = () => {
                 <InputLabel>Prioridade</InputLabel>
                 <Select
                   value={eventPriority ?? ''}
-                  onChange={(e) => setEventPriority(e.target.value)}
+                  onChange={e => setEventPriority(e.target.value)}
                   label="Prioridade"
                   native
                 >
                   <option aria-label="None" value="" />
-                  {priority.map((p) => (
-                    <option key={p.value} value={p.value}>{p.label}</option>
+                  {priority.map(p => (
+                    <option key={p.value} value={p.value}>
+                      {p.label}
+                    </option>
                   ))}
                 </Select>
               </FormControl>
@@ -152,7 +196,7 @@ const DialogEvent = () => {
               <TextField
                 label="Descrição"
                 value={eventDescription ?? ''}
-                onChange={(e) => setEventDescription(e.target.value)}
+                onChange={e => setEventDescription(e.target.value)}
                 multiline
                 rows={4}
                 fullWidth
@@ -177,15 +221,20 @@ const DialogEvent = () => {
               />
             </Paper>
           )}
-
         </Box>
 
         {/* Navigation Buttons */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-          <Button disabled={activeStep === 0} onClick={handleBack}>Voltar</Button>
-          <Button disabled={activeStep === steps.length - 1} onClick={handleNext}>Próximo</Button>
+          <Button disabled={activeStep === 0} onClick={handleBack}>
+            Voltar
+          </Button>
+          <Button
+            disabled={activeStep === steps.length - 1}
+            onClick={handleNext}
+          >
+            Próximo
+          </Button>
         </Box>
-
       </Box>
     </Dialog>
   );

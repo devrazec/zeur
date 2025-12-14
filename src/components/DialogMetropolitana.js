@@ -6,14 +6,23 @@ import { Dialog } from 'primereact/dialog';
 import { Image } from 'primereact/image';
 
 const DialogMetropolitana = () => {
-  const {
-    dialogMetropolitana, setDialogMetropolitana,
-  } = useContext(GlobalContext);
+  const { dialogMetropolitana, setDialogMetropolitana } =
+    useContext(GlobalContext);
 
   return (
     <div className="card flex justify-content-center">
-      <Dialog header="Região Metropolitâna" draggable={false} resizable={false} visible={dialogMetropolitana} onHide={() => { if (!dialogMetropolitana) return; setDialogMetropolitana(false); }}
-        style={{ width: '50vw' }} breakpoints={{ '960px': '75vw', '641px': '100vw' }}>
+      <Dialog
+        header="Região Metropolitâna"
+        draggable={false}
+        resizable={false}
+        visible={dialogMetropolitana}
+        onHide={() => {
+          if (!dialogMetropolitana) return;
+          setDialogMetropolitana(false);
+        }}
+        style={{ width: '50vw' }}
+        breakpoints={{ '960px': '75vw', '641px': '100vw' }}
+      >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Image
             className="border-round w-full"

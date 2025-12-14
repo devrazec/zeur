@@ -7,8 +7,7 @@ import { GlobalContext } from '../context/GlobalContext';
 const GoogleLayer = () => {
   const map = useMap();
 
-  const { geoMetropolitana } =
-    useContext(GlobalContext);
+  const { geoMetropolitana } = useContext(GlobalContext);
 
   useEffect(() => {
     if (!map) return;

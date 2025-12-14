@@ -24,8 +24,9 @@ const DialogLogin = () => {
         breakpoints={{ '960px': '75vw', '641px': '100vw' }}
       >
         <div className="flex flex-column align-items-center">
-
-          <p className="text-color-secondary block mb-5">Enviaremos o código de autenticação para o seu email.</p>
+          <p className="text-color-secondary block mb-5">
+            Enviaremos o código de autenticação para o seu email.
+          </p>
 
           <div className="flex flex-column gap-2 w-full">
             <label htmlFor="email">Email</label>
@@ -40,11 +41,17 @@ const DialogLogin = () => {
 
           <div className="flex flex-column gap-2 mt-5">
             <div className="p-inputgroup flex-1">
-              <InputOtp id="code" aria-describedby="code-help" value={token} onChange={(e) => setTokens(e.value)} length={6} style={{ gap: 10 }} integerOnly />
+              <InputOtp
+                id="code"
+                aria-describedby="code-help"
+                value={token}
+                onChange={e => setTokens(e.value)}
+                length={6}
+                style={{ gap: 10 }}
+                integerOnly
+              />
             </div>
-            <small id="code-help">
-              Digite o código de autentição.
-            </small>
+            <small id="code-help">Digite o código de autentição.</small>
           </div>
 
           <div className="flex justify-content-between mt-5 align-self-stretch">

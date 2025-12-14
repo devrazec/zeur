@@ -1,20 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useMap } from '@vis.gl/react-google-maps';
 import { GlobalContext } from '../context/GlobalContext';
 
 const GoogleResetLocation = ({ initialView, zoomView, updateAddress }) => {
   const map = useMap();
 
-    const {
-    geoEventZoomView,
-    setGeoEventZoomView,
-    geoEventMyLocation,
-    setGeoEvenMyLocation,
-    setGeoEvenPinLocation,
-    setGeoEventAddressLocation,
-  } = useContext(GlobalContext);
+  const { setGeoEvenPinLocation } = useContext(GlobalContext);
 
   useEffect(() => {
     if (!map) return;

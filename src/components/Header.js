@@ -6,8 +6,7 @@ import MobilePanel from '../components/MobilePanel';
 import SearchField from '../components/SearchField';
 import FilterBar from '../components/FilterBar';
 import { Image } from 'primereact/image';
-import { Button } from "primereact/button";
-import { Divider } from "primereact/divider"
+import { Button } from 'primereact/button';
 
 import DialogLogin from '../components/DialogLogin';
 import DialogOcorrencia from '../components/DialogOcorrencia';
@@ -19,15 +18,21 @@ import DialogZeladoria from '../components/DialogZeladoria';
 import DialogContact from '../components/DialogContact';
 import DialogStepper from '../components/DialogStepper';
 
-import Link from "next/link"
-
 const Header = () => {
-  const { mobileDevice, mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana, setDialogMunicipal,
-    setDialogOcorrencia, dialogEvent, setDialogEvent, dialogAbout, setDialogAbout,
+  const {
+    mobileDevice,
+    mobilePanel,
+    setMobilePanel,
+    setDialogLogin,
+    setDialogMetropolitana,
+    setDialogMunicipal,
+    //setDialogOcorrencia,
+    setDialogEvent,
+    //setDialogAbout,
     setDialogZeladoria,
-    setDialogContact, setDialogStepper,
-  } =
-    useContext(GlobalContext);
+    setDialogContact,
+    //setDialogStepper,
+  } = useContext(GlobalContext);
 
   return (
     <div className="surface-ground">
@@ -74,7 +79,6 @@ const Header = () => {
         </div>
 
         <div className="hidden lg:flex align-items-center gap-5">
-
           {/* <Button
             className="custom-nav-btn p-button-text text-left"
             label={
@@ -109,7 +113,6 @@ const Header = () => {
             />
           </div>
           <div class="flex align-items-center justify-content-center">
-
             <Button
               className="custom-nav-btn p-button-text text-left border-1"
               label={
@@ -123,7 +126,6 @@ const Header = () => {
           </div>
 
           <div class="flex align-items-center justify-content-center">
-
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -137,7 +139,6 @@ const Header = () => {
           </div>
 
           <div class="flex align-items-center justify-content-center">
-
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -151,7 +152,6 @@ const Header = () => {
           </div>
 
           <div class="flex align-items-center justify-content-center">
-
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -163,11 +163,7 @@ const Header = () => {
               onClick={() => setDialogContact(true)}
             />
           </div>
-
-
         </div>
-
-
       </div>
 
       <FilterBar />
@@ -184,7 +180,6 @@ const Header = () => {
       <DialogZeladoria />
       <DialogContact />
       <DialogStepper />
-
     </div>
   );
 };

@@ -5,7 +5,6 @@ import { GlobalContext } from '../context/GlobalContext';
 import { Button } from 'primereact/button';
 import { Sidebar } from 'primereact/sidebar';
 import { Image } from 'primereact/image';
-import { Divider } from "primereact/divider"
 import DialogLogin from '../components/DialogLogin';
 import DialogOcorrencia from '../components/DialogOcorrencia';
 import DialogMetropolitana from '../components/DialogMetropolitana';
@@ -14,11 +13,19 @@ import DialogZeladoria from '../components/DialogZeladoria';
 import DialogContact from '../components/DialogContact';
 import DialogStepper from '../components/DialogStepper';
 
-
 const MobilePanel = () => {
-  const { mobilePanel, setMobilePanel, setDialogLogin, setDialogMetropolitana,
-    setDialogMunicipal, setDialogOcorrencia, setDialogEvent, setDialogZeladoria,
-    setDialogContact, setDialogStepper } = useContext(GlobalContext);
+  const {
+    mobilePanel,
+    setMobilePanel,
+    setDialogLogin,
+    setDialogMetropolitana,
+    setDialogMunicipal,
+    //setDialogOcorrencia,
+    setDialogEvent,
+    setDialogZeladoria,
+    setDialogContact,
+    //setDialogStepper,
+  } = useContext(GlobalContext);
 
   return (
     <>
@@ -67,9 +74,8 @@ const MobilePanel = () => {
           />
         </div>
 
-        <div style={{ padding: "1.5rem" }}>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-
+        <div style={{ padding: '1.5rem' }}>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li className="py-2">
               {/* <Button
                 className="custom-nav-btn p-button-text w-full text-left"
@@ -78,7 +84,6 @@ const MobilePanel = () => {
                 onClick={() => setDialogOcorrencia(true)}
               /> */}
               <div class="flex align-items-center justify-content-center">
-
                 <Button
                   className="custom-nav-btn p-button-text text-left"
                   icon="pi pi-cog"
@@ -86,7 +91,6 @@ const MobilePanel = () => {
                   onClick={() => setDialogZeladoria(true)}
                 />
               </div>
-
             </li>
 
             <li className="py-2">
@@ -97,7 +101,6 @@ const MobilePanel = () => {
                 onClick={() => setDialogOcorrencia(true)}
               /> */}
               <div class="flex align-items-center justify-content-center">
-
                 <Button
                   className="custom-nav-btn p-button-text text-left"
                   icon="pi pi-pencil"
@@ -105,12 +108,10 @@ const MobilePanel = () => {
                   onClick={() => setDialogEvent(true)}
                 />
               </div>
-
             </li>
 
             <li className="py-2">
               <div class="flex align-items-center justify-content-center">
-
                 <Button
                   className="custom-nav-btn p-button-text w-full text-left"
                   icon="pi pi-user"
@@ -118,12 +119,10 @@ const MobilePanel = () => {
                   onClick={() => setDialogLogin(true)}
                 />
               </div>
-
             </li>
 
             <li className="py-2">
               <div class="flex align-items-center justify-content-center">
-
                 <Button
                   className="custom-nav-btn p-button-text w-full text-left"
                   icon="pi pi-map-marker"
@@ -131,12 +130,10 @@ const MobilePanel = () => {
                   onClick={() => setDialogMetropolitana(true)}
                 />
               </div>
-
             </li>
 
             <li className="py-2">
               <div class="flex align-items-center justify-content-center">
-
                 <Button
                   className="custom-nav-btn p-button-text w-full text-left"
                   icon="pi pi-building"
@@ -144,12 +141,10 @@ const MobilePanel = () => {
                   onClick={() => setDialogMunicipal(true)}
                 />
               </div>
-
             </li>
 
             <li className="py-2">
               <div class="flex align-items-center justify-content-center">
-
                 <Button
                   className="custom-nav-btn p-button-text w-full text-left"
                   icon="pi pi-envelope"
@@ -157,9 +152,7 @@ const MobilePanel = () => {
                   onClick={() => setDialogContact(true)}
                 />
               </div>
-
             </li>
-
           </ul>
         </div>
       </Sidebar>

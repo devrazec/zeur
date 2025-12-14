@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
-import { APIProvider, Map, AdvancedMarker, useMap } from '@vis.gl/react-google-maps';
+import { APIProvider, Map, AdvancedMarker } from '@vis.gl/react-google-maps';
 import GoogleLayer from './GoogleLayer';
 import GoogleMyLocation from './GoogleMyLocation';
 import GoogleResetLocation from './GoogleResetLocation';
@@ -69,7 +69,7 @@ const GoogleMap = () => {
           scrollwheel: true,
           cameraControl: false,
         }}
-        onClick={(event) => {
+        onClick={event => {
           const lat = event.latLng.lat();
           const lng = event.latLng.lng();
           setGeoEvenPinLocation({ lat, lng });
@@ -86,7 +86,7 @@ const GoogleMap = () => {
             draggable={true}
             title={markerLabel}
             //animation={window.google.maps.Animation.DROP} // smooth animation on initial drop
-            onDragEnd={(event) => {
+            onDragEnd={event => {
               const lat = event.latLng.lat();
               const lng = event.latLng.lng();
               setGeoEvenPinLocation({ lat, lng });

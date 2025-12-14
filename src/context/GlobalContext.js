@@ -136,11 +136,17 @@ export function GlobalProvider({ children }) {
   const [dialogZeladoria, setDialogZeladoria] = useState(false);
   const [dialogContact, setDialogContact] = useState(false);
 
-  const [geoEventPinLocation, setGeoEvenPinLocation] = useState({ lat: -23.5489 - 0.05, lng: -46.6388 + 0.18 });
+  const [geoEventPinLocation, setGeoEvenPinLocation] = useState({
+    lat: -23.5489 - 0.05,
+    lng: -46.6388 + 0.18,
+  });
   const [geoEventMyLocation, setGeoEvenMyLocation] = useState([]);
   const [geoEventAddressLocation, setGeoEventAddressLocation] = useState([]);
   const [geoEventZoomView, setGeoEventZoomView] = useState(9);
-  const [geoEventInitialView, setGeoEventInitialView] = useState({ lat: -23.5489 - 0.05, lng: -46.6388 + 0.18 });
+  const [geoEventInitialView, setGeoEventInitialView] = useState({
+    lat: -23.5489 - 0.05,
+    lng: -46.6388 + 0.18,
+  });
 
   const [eventDate, setEventDate] = useState('');
   const [eventCategory, setEventCategory] = useState('');
@@ -206,31 +212,46 @@ export function GlobalProvider({ children }) {
         geoTaboaoSerra,
         setGeoTaboaoSerra,
 
-        dialogLogin, setDialogLogin,
-        dialogMetropolitana, setDialogMetropolitana,
-        dialogMunicipal, setDialogMunicipal,
-        dialogOcorrencia, setDialogOcorrencia,
-        dialogEvent, setDialogEvent,
-        dialogAbout, setDialogAbout,
-        dialogStepper, setDialogStepper,
-        dialogZeladoria, setDialogZeladoria,
-        dialogContact, setDialogContact,
+        dialogLogin,
+        setDialogLogin,
+        dialogMetropolitana,
+        setDialogMetropolitana,
+        dialogMunicipal,
+        setDialogMunicipal,
+        dialogOcorrencia,
+        setDialogOcorrencia,
+        dialogEvent,
+        setDialogEvent,
+        dialogAbout,
+        setDialogAbout,
+        dialogStepper,
+        setDialogStepper,
+        dialogZeladoria,
+        setDialogZeladoria,
+        dialogContact,
+        setDialogContact,
 
-        geoEventPinLocation, setGeoEvenPinLocation,
-        geoEventMyLocation, setGeoEvenMyLocation,
-        geoEventAddressLocation, setGeoEventAddressLocation,
-        geoEventZoomView, setGeoEventZoomView,
-        geoEventInitialView, setGeoEventInitialView,
+        geoEventPinLocation,
+        setGeoEvenPinLocation,
+        geoEventMyLocation,
+        setGeoEvenMyLocation,
+        geoEventAddressLocation,
+        setGeoEventAddressLocation,
+        geoEventZoomView,
+        setGeoEventZoomView,
+        geoEventInitialView,
+        setGeoEventInitialView,
 
-        eventDate, setEventDate,
-        eventCategory, setEventCategory,
-        eventLocation, setEventLocation,
-        eventPriority, setEventPriority,
-        eventDescription, setEventDescription,
-
-
-
-
+        eventDate,
+        setEventDate,
+        eventCategory,
+        setEventCategory,
+        eventLocation,
+        setEventLocation,
+        eventPriority,
+        setEventPriority,
+        eventDescription,
+        setEventDescription,
       }}
     >
       {children}
