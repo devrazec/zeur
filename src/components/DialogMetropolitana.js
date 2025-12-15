@@ -13,6 +13,7 @@ const DialogMetropolitana = () => {
     <div className="card flex justify-content-center">
       <Dialog
         header="Região Metropolitâna"
+        headerStyle={{ backgroundColor: '#003C32', color: 'white' }}
         draggable={false}
         resizable={false}
         visible={dialogMetropolitana}

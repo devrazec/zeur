@@ -11,6 +11,7 @@ const DialogAbout = () => {
     <div className="card flex justify-content-center">
       <Dialog
         header="Zeladoria Urbana"
+        headerStyle={{ backgroundColor: '#003C32', color: 'white' }}
         draggable={false}
         resizable={false}
         visible={dialogAbout}

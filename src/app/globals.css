@@ -88,3 +88,26 @@ body {
 .p-dialog-content {
   overscroll-behavior: contain;
 }
+
+/* .p-stepper.p-stepper-vertical .p-stepper-content {
+   padding-left: 0; 
+}
+
+.p-stepper.p-stepper-vertical .p-stepper-panel .p-stepper-content {
+    padding-left: 0;
+} */
+
+.custom-p-dialog .p-dialog-content {
+  background: #ffffff;
+  color: #495057;
+  padding: 0;
+}
+
+.custom-p-fieldset .p-fieldset-legend {
+  padding: 1rem;
+  border: 1px solid #057642;
+  color: #dee2e6;
+  background: #057642;
+  font-weight: 600;
+  border-radius: 3px;
+}

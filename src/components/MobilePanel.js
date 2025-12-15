@@ -24,7 +24,7 @@ const MobilePanel = () => {
     setDialogEvent,
     setDialogZeladoria,
     setDialogContact,
-    //setDialogStepper,
+    setDialogStepper,
   } = useContext(GlobalContext);
 
   return (
@@ -104,8 +104,8 @@ const MobilePanel = () => {
                 <Button
                   className="custom-nav-btn p-button-text text-left"
                   icon="pi pi-pencil"
-                  label="Registre Evento"
-                  onClick={() => setDialogEvent(true)}
+                  label="Registre Reclamação"
+                  onClick={() => setDialogStepper(true)}
                 />
               </div>
             </li>

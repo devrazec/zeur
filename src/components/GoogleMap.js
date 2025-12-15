@@ -41,7 +41,11 @@ const GoogleMap = () => {
   };
 
   useEffect(() => {
-    if (geoEventPinLocation) {
+    if (
+      geoEventPinLocation &&
+      typeof geoEventPinLocation.lat === 'number' &&
+      typeof geoEventPinLocation.lng === 'number'
+    ) {
       updateAddress(geoEventPinLocation.lat, geoEventPinLocation.lng);
     }
   }, [geoEventPinLocation]);
@@ -52,7 +56,7 @@ const GoogleMap = () => {
       libraries={['drawing']}
     >
       <Map
-        style={{ width: '100%', height: '80vh' }}
+        style={{ width: '100%', height: '300px' }}
         defaultCenter={geoEventInitialView}
         defaultZoom={geoEventZoomView}
         gestureHandling="greedy"
@@ -70,8 +74,11 @@ const GoogleMap = () => {
           cameraControl: false,
         }}
         onClick={event => {
+          if (!event?.latLng) return;
+
           const lat = event.latLng.lat();
           const lng = event.latLng.lng();
+
           setGeoEvenPinLocation({ lat, lng });
           setGeoEvenMyLocation({ lat, lng });
           updateAddress(lat, lng);
@@ -87,8 +94,11 @@ const GoogleMap = () => {
             title={markerLabel}
             //animation={window.google.maps.Animation.DROP} // smooth animation on initial drop
             onDragEnd={event => {
+              if (!event?.latLng) return;
+
               const lat = event.latLng.lat();
               const lng = event.latLng.lng();
+
               setGeoEvenPinLocation({ lat, lng });
               setGeoEvenMyLocation({ lat, lng });
               updateAddress(lat, lng);

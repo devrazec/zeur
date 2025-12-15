@@ -16,6 +16,7 @@ const DialogLogin = () => {
     <div className="card flex justify-content-center">
       <Dialog
         header="Autenticação"
+        headerStyle={{ backgroundColor: '#003C32', color: 'white' }}
         draggable={false}
         resizable={false}
         visible={dialogLogin}
@@ -51,11 +52,13 @@ const DialogLogin = () => {
                 integerOnly
               />
             </div>
-            <small id="code-help">Digite o código de autentição.</small>
+            <small id="code-help">
+              Digite o código de autenticação enviado por email.
+            </small>
           </div>
 
           <div className="flex justify-content-between mt-5 align-self-stretch">
-            <Button label="Reenviar" link className="p-0"></Button>
+            <Button label="Reenviar Código" link className="p-0"></Button>
             <Button label="Autenticar"></Button>
           </div>
         </div>

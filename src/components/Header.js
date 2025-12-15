@@ -31,7 +31,7 @@ const Header = () => {
     //setDialogAbout,
     setDialogZeladoria,
     setDialogContact,
-    //setDialogStepper,
+    setDialogStepper,
   } = useContext(GlobalContext);
 
   return (
@@ -57,7 +57,7 @@ const Header = () => {
 
         {/* LEFT OF SEARCH — Deliver To */}
         <div className="hidden lg:flex text-sm flex-column ml-3">
-          <div class="flex align-items-center justify-content-center">
+          <div className="flex align-items-center justify-content-center">
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -100,7 +100,7 @@ const Header = () => {
             </div>
           </Link> */}
 
-          <div class="flex align-items-center justify-content-center">
+          <div className="flex align-items-center justify-content-center">
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -109,10 +109,10 @@ const Header = () => {
                   <div className="font-bold">Reclamação</div>
                 </div>
               }
-              onClick={() => setDialogEvent(true)}
+              onClick={() => setDialogStepper(true)}
             />
           </div>
-          <div class="flex align-items-center justify-content-center">
+          <div className="flex align-items-center justify-content-center">
             <Button
               className="custom-nav-btn p-button-text text-left border-1"
               label={
@@ -125,7 +125,7 @@ const Header = () => {
             />
           </div>
 
-          <div class="flex align-items-center justify-content-center">
+          <div className="flex align-items-center justify-content-center">
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -138,7 +138,7 @@ const Header = () => {
             />
           </div>
 
-          <div class="flex align-items-center justify-content-center">
+          <div className="flex align-items-center justify-content-center">
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={
@@ -151,7 +151,7 @@ const Header = () => {
             />
           </div>
 
-          <div class="flex align-items-center justify-content-center">
+          <div className="flex align-items-center justify-content-center">
             <Button
               className="custom-nav-btn p-button-text text-left"
               label={

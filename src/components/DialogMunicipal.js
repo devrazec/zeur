@@ -35,6 +35,7 @@ const DialogMunicipal = () => {
     <div className="card flex justify-content-center">
       <Dialog
         header="Secretaria Municipal"
+        headerStyle={{ backgroundColor: '#003C32', color: 'white' }}
         draggable={false}
         resizable={false}
         visible={dialogMunicipal}
