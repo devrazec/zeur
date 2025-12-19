@@ -92,7 +92,7 @@ npm i -S @react-google-maps/api or npm i -S @vis.gl/react-google-maps
 
 npm remove @react-google-maps/api
 
--- Database
+-- Databasec
 
 npm i -S mongodb
 npm i -S firebase
